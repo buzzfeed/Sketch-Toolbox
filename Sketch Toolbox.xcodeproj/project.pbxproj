@@ -1,0 +1,499 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EA86F5CE192AB55F00B834ED /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA86F5CD192AB55F00B834ED /* Cocoa.framework */; };
+		EA86F5D8192AB55F00B834ED /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EA86F5D6192AB55F00B834ED /* InfoPlist.strings */; };
+		EA86F5DA192AB55F00B834ED /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EA86F5D9192AB55F00B834ED /* main.m */; };
+		EA86F5DE192AB55F00B834ED /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = EA86F5DC192AB55F00B834ED /* Credits.rtf */; };
+		EA86F5E1192AB55F00B834ED /* STAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EA86F5E0192AB55F00B834ED /* STAppDelegate.m */; };
+		EA86F5E4192AB55F00B834ED /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA86F5E2192AB55F00B834ED /* MainMenu.xib */; };
+		EA86F5E7192AB55F00B834ED /* Sketch_Toolbox.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EA86F5E5192AB55F00B834ED /* Sketch_Toolbox.xcdatamodeld */; };
+		EA86F5E9192AB55F00B834ED /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA86F5E8192AB55F00B834ED /* Images.xcassets */; };
+		EA86F5F0192AB55F00B834ED /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA86F5EF192AB55F00B834ED /* XCTest.framework */; };
+		EA86F5F1192AB55F00B834ED /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA86F5CD192AB55F00B834ED /* Cocoa.framework */; };
+		EA86F5F9192AB55F00B834ED /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EA86F5F7192AB55F00B834ED /* InfoPlist.strings */; };
+		EA86F5FB192AB55F00B834ED /* Sketch_ToolboxTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EA86F5FA192AB55F00B834ED /* Sketch_ToolboxTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EA86F5F2192AB55F00B834ED /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EA86F5C2192AB55F00B834ED /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EA86F5C9192AB55F00B834ED;
+			remoteInfo = "Sketch Toolbox";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		EA86F5CA192AB55F00B834ED /* Sketch Toolbox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sketch Toolbox.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA86F5CD192AB55F00B834ED /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		EA86F5D0192AB55F00B834ED /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		EA86F5D1192AB55F00B834ED /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		EA86F5D2192AB55F00B834ED /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		EA86F5D5192AB55F00B834ED /* Sketch Toolbox-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Sketch Toolbox-Info.plist"; sourceTree = "<group>"; };
+		EA86F5D7192AB55F00B834ED /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		EA86F5D9192AB55F00B834ED /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		EA86F5DB192AB55F00B834ED /* Sketch Toolbox-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Sketch Toolbox-Prefix.pch"; sourceTree = "<group>"; };
+		EA86F5DD192AB55F00B834ED /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		EA86F5DF192AB55F00B834ED /* STAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STAppDelegate.h; sourceTree = "<group>"; };
+		EA86F5E0192AB55F00B834ED /* STAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STAppDelegate.m; sourceTree = "<group>"; };
+		EA86F5E3192AB55F00B834ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		EA86F5E6192AB55F00B834ED /* Sketch_Toolbox.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Sketch_Toolbox.xcdatamodel; sourceTree = "<group>"; };
+		EA86F5E8192AB55F00B834ED /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		EA86F5EE192AB55F00B834ED /* Sketch ToolboxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Sketch ToolboxTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA86F5EF192AB55F00B834ED /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		EA86F5F6192AB55F00B834ED /* Sketch ToolboxTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Sketch ToolboxTests-Info.plist"; sourceTree = "<group>"; };
+		EA86F5F8192AB55F00B834ED /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		EA86F5FA192AB55F00B834ED /* Sketch_ToolboxTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Sketch_ToolboxTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EA86F5C7192AB55F00B834ED /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA86F5CE192AB55F00B834ED /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EA86F5EB192AB55F00B834ED /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA86F5F1192AB55F00B834ED /* Cocoa.framework in Frameworks */,
+				EA86F5F0192AB55F00B834ED /* XCTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EA86F5C1192AB55F00B834ED = {
+			isa = PBXGroup;
+			children = (
+				EA86F5D3192AB55F00B834ED /* Sketch Toolbox */,
+				EA86F5F4192AB55F00B834ED /* Sketch ToolboxTests */,
+				EA86F5CC192AB55F00B834ED /* Frameworks */,
+				EA86F5CB192AB55F00B834ED /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EA86F5CB192AB55F00B834ED /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EA86F5CA192AB55F00B834ED /* Sketch Toolbox.app */,
+				EA86F5EE192AB55F00B834ED /* Sketch ToolboxTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EA86F5CC192AB55F00B834ED /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EA86F5CD192AB55F00B834ED /* Cocoa.framework */,
+				EA86F5EF192AB55F00B834ED /* XCTest.framework */,
+				EA86F5CF192AB55F00B834ED /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EA86F5CF192AB55F00B834ED /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EA86F5D0192AB55F00B834ED /* AppKit.framework */,
+				EA86F5D1192AB55F00B834ED /* CoreData.framework */,
+				EA86F5D2192AB55F00B834ED /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		EA86F5D3192AB55F00B834ED /* Sketch Toolbox */ = {
+			isa = PBXGroup;
+			children = (
+				EA86F5DF192AB55F00B834ED /* STAppDelegate.h */,
+				EA86F5E0192AB55F00B834ED /* STAppDelegate.m */,
+				EA86F5E2192AB55F00B834ED /* MainMenu.xib */,
+				EA86F5E8192AB55F00B834ED /* Images.xcassets */,
+				EA86F5E5192AB55F00B834ED /* Sketch_Toolbox.xcdatamodeld */,
+				EA86F5D4192AB55F00B834ED /* Supporting Files */,
+			);
+			path = "Sketch Toolbox";
+			sourceTree = "<group>";
+		};
+		EA86F5D4192AB55F00B834ED /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EA86F5D5192AB55F00B834ED /* Sketch Toolbox-Info.plist */,
+				EA86F5D6192AB55F00B834ED /* InfoPlist.strings */,
+				EA86F5D9192AB55F00B834ED /* main.m */,
+				EA86F5DB192AB55F00B834ED /* Sketch Toolbox-Prefix.pch */,
+				EA86F5DC192AB55F00B834ED /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EA86F5F4192AB55F00B834ED /* Sketch ToolboxTests */ = {
+			isa = PBXGroup;
+			children = (
+				EA86F5FA192AB55F00B834ED /* Sketch_ToolboxTests.m */,
+				EA86F5F5192AB55F00B834ED /* Supporting Files */,
+			);
+			path = "Sketch ToolboxTests";
+			sourceTree = "<group>";
+		};
+		EA86F5F5192AB55F00B834ED /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EA86F5F6192AB55F00B834ED /* Sketch ToolboxTests-Info.plist */,
+				EA86F5F7192AB55F00B834ED /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EA86F5C9192AB55F00B834ED /* Sketch Toolbox */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EA86F5FE192AB55F00B834ED /* Build configuration list for PBXNativeTarget "Sketch Toolbox" */;
+			buildPhases = (
+				EA86F5C6192AB55F00B834ED /* Sources */,
+				EA86F5C7192AB55F00B834ED /* Frameworks */,
+				EA86F5C8192AB55F00B834ED /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Sketch Toolbox";
+			productName = "Sketch Toolbox";
+			productReference = EA86F5CA192AB55F00B834ED /* Sketch Toolbox.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EA86F5ED192AB55F00B834ED /* Sketch ToolboxTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EA86F601192AB55F00B834ED /* Build configuration list for PBXNativeTarget "Sketch ToolboxTests" */;
+			buildPhases = (
+				EA86F5EA192AB55F00B834ED /* Sources */,
+				EA86F5EB192AB55F00B834ED /* Frameworks */,
+				EA86F5EC192AB55F00B834ED /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EA86F5F3192AB55F00B834ED /* PBXTargetDependency */,
+			);
+			name = "Sketch ToolboxTests";
+			productName = "Sketch ToolboxTests";
+			productReference = EA86F5EE192AB55F00B834ED /* Sketch ToolboxTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EA86F5C2192AB55F00B834ED /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = ST;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Shahruz Shaukat";
+				TargetAttributes = {
+					EA86F5ED192AB55F00B834ED = {
+						TestTargetID = EA86F5C9192AB55F00B834ED;
+					};
+				};
+			};
+			buildConfigurationList = EA86F5C5192AB55F00B834ED /* Build configuration list for PBXProject "Sketch Toolbox" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EA86F5C1192AB55F00B834ED;
+			productRefGroup = EA86F5CB192AB55F00B834ED /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EA86F5C9192AB55F00B834ED /* Sketch Toolbox */,
+				EA86F5ED192AB55F00B834ED /* Sketch ToolboxTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EA86F5C8192AB55F00B834ED /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA86F5D8192AB55F00B834ED /* InfoPlist.strings in Resources */,
+				EA86F5E9192AB55F00B834ED /* Images.xcassets in Resources */,
+				EA86F5DE192AB55F00B834ED /* Credits.rtf in Resources */,
+				EA86F5E4192AB55F00B834ED /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EA86F5EC192AB55F00B834ED /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA86F5F9192AB55F00B834ED /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EA86F5C6192AB55F00B834ED /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA86F5E7192AB55F00B834ED /* Sketch_Toolbox.xcdatamodeld in Sources */,
+				EA86F5DA192AB55F00B834ED /* main.m in Sources */,
+				EA86F5E1192AB55F00B834ED /* STAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EA86F5EA192AB55F00B834ED /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA86F5FB192AB55F00B834ED /* Sketch_ToolboxTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EA86F5F3192AB55F00B834ED /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EA86F5C9192AB55F00B834ED /* Sketch Toolbox */;
+			targetProxy = EA86F5F2192AB55F00B834ED /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		EA86F5D6192AB55F00B834ED /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EA86F5D7192AB55F00B834ED /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		EA86F5DC192AB55F00B834ED /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EA86F5DD192AB55F00B834ED /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		EA86F5E2192AB55F00B834ED /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EA86F5E3192AB55F00B834ED /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		EA86F5F7192AB55F00B834ED /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EA86F5F8192AB55F00B834ED /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EA86F5FC192AB55F00B834ED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		EA86F5FD192AB55F00B834ED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		EA86F5FF192AB55F00B834ED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Sketch Toolbox/Sketch Toolbox-Prefix.pch";
+				INFOPLIST_FILE = "Sketch Toolbox/Sketch Toolbox-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		EA86F600192AB55F00B834ED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Sketch Toolbox/Sketch Toolbox-Prefix.pch";
+				INFOPLIST_FILE = "Sketch Toolbox/Sketch Toolbox-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		EA86F602192AB55F00B834ED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Sketch Toolbox.app/Contents/MacOS/Sketch Toolbox";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Sketch Toolbox/Sketch Toolbox-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Sketch ToolboxTests/Sketch ToolboxTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		EA86F603192AB55F00B834ED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Sketch Toolbox.app/Contents/MacOS/Sketch Toolbox";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Sketch Toolbox/Sketch Toolbox-Prefix.pch";
+				INFOPLIST_FILE = "Sketch ToolboxTests/Sketch ToolboxTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EA86F5C5192AB55F00B834ED /* Build configuration list for PBXProject "Sketch Toolbox" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EA86F5FC192AB55F00B834ED /* Debug */,
+				EA86F5FD192AB55F00B834ED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EA86F5FE192AB55F00B834ED /* Build configuration list for PBXNativeTarget "Sketch Toolbox" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EA86F5FF192AB55F00B834ED /* Debug */,
+				EA86F600192AB55F00B834ED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		EA86F601192AB55F00B834ED /* Build configuration list for PBXNativeTarget "Sketch ToolboxTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EA86F602192AB55F00B834ED /* Debug */,
+				EA86F603192AB55F00B834ED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		EA86F5E5192AB55F00B834ED /* Sketch_Toolbox.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				EA86F5E6192AB55F00B834ED /* Sketch_Toolbox.xcdatamodel */,
+			);
+			currentVersion = EA86F5E6192AB55F00B834ED /* Sketch_Toolbox.xcdatamodel */;
+			path = Sketch_Toolbox.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = EA86F5C2192AB55F00B834ED /* Project object */;
+}
