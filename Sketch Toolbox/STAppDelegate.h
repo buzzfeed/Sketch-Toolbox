@@ -8,7 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface STAppDelegate : NSObject <NSApplicationDelegate>
+@interface STAppDelegate : NSObject <NSApplicationDelegate, NSTableViewDataSource, NSTableViewDelegate>
 
 @property (assign) IBOutlet NSWindow *window;
 
@@ -17,5 +17,8 @@
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
 - (IBAction)saveAction:(id)sender;
+- (NSString *)applicationFilesDirectory;
+
+@property (nonatomic, strong) IBOutlet NSTableView *tableView;
 
 @end

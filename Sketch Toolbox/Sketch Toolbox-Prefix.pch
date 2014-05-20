@@ -6,4 +6,7 @@
 
 #ifdef __OBJC__
     #import <Cocoa/Cocoa.h>
+
+    #import "CoreData+MagicalRecord.h"
+
 #endif
