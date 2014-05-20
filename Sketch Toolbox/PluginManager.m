@@ -31,12 +31,11 @@
     plugin.name = dictionary[@"name"];
     plugin.desc = dictionary[@"description"];
     plugin.owner = dictionary[@"owner"];
-    if (!plugin.installed) plugin.installed = nil;
     return plugin;
 }
 
 -(void)updatePlugins {
-    NSPredicate *installed = [NSPredicate predicateWithFormat:@"installed != nil"];
+    NSPredicate *installed = [NSPredicate predicateWithFormat:@"installed > %@", [NSDate dateWithTimeIntervalSince1970:978307200]];
     NSArray *installedPlugins = [Plugin MR_findAllWithPredicate:installed];
     [installedPlugins enumerateObjectsUsingBlock:^(Plugin *plugin, NSUInteger idx, BOOL *stop) {
         [plugin download];

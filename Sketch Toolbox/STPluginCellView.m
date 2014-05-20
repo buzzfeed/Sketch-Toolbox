@@ -18,7 +18,7 @@
 -(void)populate {
     self.name.stringValue = self.plugin.name;
     self.description.stringValue = self.plugin.desc;
-    if (self.plugin.installed) {
+    if (self.plugin.installed > [NSDate dateWithTimeIntervalSince1970:978307200]) {
         [self.downloadButton setTransparent:YES];
         [self.downloadButton setEnabled:NO];
     } else {

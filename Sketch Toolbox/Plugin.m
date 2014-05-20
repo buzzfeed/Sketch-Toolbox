@@ -17,7 +17,7 @@
 @dynamic owner;
 
 -(void)download {
-    if (!self.installed) [self initiateDownload];
+    if (self.installed == [NSDate dateWithTimeIntervalSince1970:978307200]) [self initiateDownload];
     else { // Check if there are any updates available
         
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
