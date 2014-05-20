@@ -15,7 +15,10 @@
 
 @property (nonatomic, strong) IBOutlet NSTextField *name;
 @property (nonatomic, strong) IBOutlet NSTextField *description;
+@property (nonatomic, strong) IBOutlet NSButton *downloadButton;
 
 -(IBAction)downloadButtonPressed:(id)sender;
+
+-(void)populate;
 
 @end

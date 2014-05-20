@@ -17,6 +17,11 @@
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
 - (IBAction)saveAction:(id)sender;
+
+-(IBAction)triggerUpdates:(id)sender;
+-(IBAction)filterPlugins:(NSSearchField *)searchField;
+
+
 - (NSString *)applicationFilesDirectory;
 
 @property (nonatomic, strong) IBOutlet NSTableView *tableView;

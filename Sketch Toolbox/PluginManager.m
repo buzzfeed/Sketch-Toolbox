@@ -31,6 +31,7 @@
     plugin.name = dictionary[@"name"];
     plugin.desc = dictionary[@"description"];
     plugin.owner = dictionary[@"owner"];
+    if (!plugin.installed) plugin.installed = nil;
     return plugin;
 }
 
@@ -38,7 +39,7 @@
     NSPredicate *installed = [NSPredicate predicateWithFormat:@"installed != nil"];
     NSArray *installedPlugins = [Plugin MR_findAllWithPredicate:installed];
     [installedPlugins enumerateObjectsUsingBlock:^(Plugin *plugin, NSUInteger idx, BOOL *stop) {
-        
+        [plugin download];
     }];
 }
 

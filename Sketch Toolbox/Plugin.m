@@ -17,29 +17,33 @@
 @dynamic owner;
 
 -(void)download {
-    [self initiateDownload];
-//    if (!self.installed) [self initiateDownload];
-//    else { // Check if there are any updates available
-//        
-//        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-//        NSLocale *enUSPOSIXLocale = [NSLocale localeWithLocaleIdentifier:@"en_US_POSIX"];
-//        [dateFormatter setLocale:enUSPOSIXLocale];
-//        [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ssZZZZZ"];
-//        
-//        NSURL *url = [NSURL URLWithString:
-//                      [NSString stringWithFormat:
-//                       @"https://api.github.com/repos/%@/%@/commits?since=%@", self.owner, self.name,[dateFormatter stringFromDate:self.installed]]];
-//
-//        NSURLRequest *request = [NSURLRequest requestWithURL:url];
-//
-//        [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
-//
-//            NSArray *commits = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
-//            if ([commits count]) [self initiateDownload];
-//
-//        }];
-//        
-//    }
+    if (!self.installed) [self initiateDownload];
+    else { // Check if there are any updates available
+        
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        NSLocale *enUSPOSIXLocale = [NSLocale localeWithLocaleIdentifier:@"en_US_POSIX"];
+        [dateFormatter setLocale:enUSPOSIXLocale];
+        [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ssZZZZZ"];
+        
+        NSURL *url = [NSURL URLWithString:
+                      [NSString stringWithFormat:
+                       @"https://api.github.com/repos/%@/%@/commits?since=%@", self.owner, self.name,[dateFormatter stringFromDate:self.installed]]];
+
+        NSURLRequest *request = [NSURLRequest requestWithURL:url];
+
+        [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+
+            NSArray *commits = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+            if ([commits count]) {
+                NSLog(@"Downloading update for %@", self.name);
+                [self initiateDownload];
+            } else {
+                NSLog(@"No new updates for %@", self.name);
+            }
+
+        }];
+        
+    }
 }
 
 -(void)initiateDownload {
@@ -68,6 +72,8 @@
 
         self.installed = [NSDate date];
         [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
+        
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"pluginDownloaded" object:nil];
     }];
 
     

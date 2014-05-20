@@ -15,4 +15,16 @@
     [self.plugin download];
 }
 
+-(void)populate {
+    self.name.stringValue = self.plugin.name;
+    self.description.stringValue = self.plugin.desc;
+    if (self.plugin.installed) {
+        [self.downloadButton setTransparent:YES];
+        [self.downloadButton setEnabled:NO];
+    } else {
+        [self.downloadButton setTransparent:NO];
+        [self.downloadButton setEnabled:YES];
+    }
+}
+
 @end
