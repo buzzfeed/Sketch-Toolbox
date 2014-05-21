@@ -17,6 +17,7 @@
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSString * owner;
 @property (nonatomic, retain) NSString * downloadPath;
+@property (nonatomic, retain) NSDate * lastModified;
 @property (nonatomic) UInt32 stars;
 
 -(void)download;

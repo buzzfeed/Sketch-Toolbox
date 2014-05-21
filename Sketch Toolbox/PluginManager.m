@@ -34,33 +34,59 @@
 
 -(void)upsertPlugin:(NSDictionary *)dictionary {
 
-    Plugin *plugin = [Plugin MR_findFirstOrCreateByAttribute:@"name" withValue:dictionary[@"name"]];
-    plugin.name = dictionary[@"name"];
-    plugin.desc = dictionary[@"description"];
-    plugin.owner = dictionary[@"owner"];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(name = %@) AND (owner =%@)", dictionary[@"name"], dictionary[@"owner"]];
     
-    NSURL *url = [NSURL URLWithString:
-                  [NSString stringWithFormat:
-                   @"https://api.github.com/repos/%@/%@", plugin.owner, plugin.name]];
+    Plugin *plugin = [Plugin MR_findFirstWithPredicate:predicate];
+    
+    if (!plugin) {
+        plugin = [Plugin MR_createEntity];
+        plugin.name = dictionary[@"name"];
+        plugin.owner = dictionary[@"owner"];
+        plugin.installed = nil;
+        plugin.lastModified = [NSDate dateWithTimeIntervalSince1970:0];
+    }
 
-    NSURLRequest *request = [NSURLRequest requestWithURL:url];
-    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
-        NSDictionary *dataDict = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
-        plugin.stars = [dataDict[@"stargazers_count"] intValue];
+    plugin.desc = dictionary[@"description"];
+    
+    // We don't need to redownload remote data if the app is uninstalled and was checked in the past 24 hours
+    if (plugin.isInstalled || ([plugin.lastModified compare:[NSDate dateWithTimeIntervalSinceNow:-86400.0]] == NSOrderedAscending)) {
+    
+        NSLog(@"Getting latest info for %@", plugin.name);
         
-        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-        [formatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss.SSSZ"];
-        NSLocale *posix = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"];
-        [formatter setLocale:posix];
-        NSDate *pushed_date = [formatter dateFromString:dataDict[@"pushed_at"]];
+        NSURL *url = [NSURL URLWithString:
+                      [NSString stringWithFormat:
+                       @"https://api.github.com/repos/%@/%@", plugin.owner, plugin.name]];
         
-        if (plugin.isInstalled && ([plugin.installed compare:pushed_date] == NSOrderedAscending)) {
-            NSLog(@"Updating %@", plugin.name);
-            [plugin download];
-        }
-        [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"pluginStatusUpdated" object:nil];        
-    }];
+        NSURLRequest *request = [NSURLRequest requestWithURL:url];
+        
+        [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+            NSDictionary *dataDict = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+            plugin.stars = [dataDict[@"stargazers_count"] intValue];
+            
+            NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+            [formatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss.SSSZ"];
+            NSLocale *posix = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"];
+            [formatter setLocale:posix];
+            NSDate *pushed_date = [formatter dateFromString:dataDict[@"pushed_at"]];
+            
+            if (plugin.isInstalled && ([plugin.installed compare:pushed_date] == NSOrderedAscending)) {
+                NSLog(@"Updating %@", plugin.name);
+                [plugin download];
+            }
+            
+            plugin.lastModified = [NSDate date];
+            [self triggerUpdate];
+        }];
+
+    } else {
+        plugin.lastModified = [NSDate date];
+        [self triggerUpdate];
+    }
+}
+
+-(void)triggerUpdate {
+    [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"pluginStatusUpdated" object:nil];
 }
 
 @end

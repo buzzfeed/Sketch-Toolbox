@@ -20,9 +20,10 @@
 @dynamic owner;
 @dynamic stars;
 @dynamic downloadPath;
+@dynamic lastModified;
 
 -(BOOL)isInstalled {
-    return self.installed > [NSDate dateWithTimeIntervalSince1970:978307200];
+    return self.installed != nil;
 }
 
 -(NSString*)displayName {
@@ -44,8 +45,8 @@
         [fm removeItemAtPath:betaDownloadPath error:nil];
     }
     
-    self.installed = [NSDate dateWithTimeIntervalSince1970:978307200];
-    self.downloadPath = @"";
+    self.installed = nil;
+    self.downloadPath = nil;
     [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"pluginStatusUpdated" object:nil];    
 }

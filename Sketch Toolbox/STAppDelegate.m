@@ -26,11 +26,30 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     [MagicalRecord setupAutoMigratingCoreDataStack];
+    
+    [self migrate];
+    
     [self startApp];
     pluginManager = [PluginManager sharedManager];
     [pluginManager downloadCatalog];
 }
 
+
+-(void)migrate {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *currentAppVersion = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
+    NSString *previousVersion = [defaults objectForKey:@"appVersion"];
+    if (!previousVersion) {
+        // This is a temporary solution and just for development this week
+        NSArray *allPlugins = [Plugin MR_findAll];
+        [allPlugins enumerateObjectsUsingBlock:^(Plugin *plugin, NSUInteger idx, BOOL *stop) {
+            [plugin delete];
+        }];
+        [Plugin MR_truncateAll];
+    }
+    [defaults setObject:currentAppVersion forKey:@"appVersion"];
+    [defaults synchronize];
+}
 
 -(void)startApp {
     plugins = [Plugin MR_findAllSortedBy:@"name" ascending:YES];
