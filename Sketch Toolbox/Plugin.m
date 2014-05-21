@@ -9,6 +9,9 @@
 #import "Plugin.h"
 #import "SSZipArchive.h"
 
+#define kSketchAppStorePluginPath [@"~/Library/Containers/com.bohemiancoding.sketch3/Data/Library/Application Support/com.bohemiancoding.sketch3/Plugins/"  stringByExpandingTildeInPath]
+#define kSketchBetaPluginPath [@"~/Library/Application Support/com.bohemiancoding.sketch3/Plugins/" stringByExpandingTildeInPath]
+
 @implementation Plugin
 
 @dynamic desc;
@@ -35,6 +38,12 @@
     if (!self.isInstalled) return;
     NSFileManager *fm = [NSFileManager defaultManager];
     [fm removeItemAtPath:self.downloadPath error:nil];
+    
+    if ([fm fileExistsAtPath:kSketchBetaPluginPath]) {
+        NSString *betaDownloadPath = [self.downloadPath stringByReplacingOccurrencesOfString:kSketchAppStorePluginPath withString:kSketchBetaPluginPath];
+        [fm removeItemAtPath:betaDownloadPath error:nil];
+    }
+    
     self.installed = [NSDate dateWithTimeIntervalSince1970:978307200];
     self.downloadPath = @"";
     [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
@@ -58,10 +67,23 @@
         [SSZipArchive unzipFileAtPath:tmpPath toDestination:tmpOutputPath];
         NSFileManager *fm = [NSFileManager defaultManager];
         [fm removeItemAtPath:tmpPath error:nil];
-        NSString *outputPath = [[NSString stringWithFormat:@"~/Library/Containers/com.bohemiancoding.sketch3/Data/Library/Application Support/com.bohemiancoding.sketch3/Plugins/%@", self.displayName]  stringByExpandingTildeInPath];
-        [fm moveItemAtPath:tmpContentsPath toPath:outputPath error:nil];
+        
+        if ([fm fileExistsAtPath:kSketchBetaPluginPath]) {
+            NSString *outputPath = [NSString stringWithFormat:@"%@/%@", kSketchAppStorePluginPath, self.displayName];
+            [fm copyItemAtPath:tmpContentsPath toPath:outputPath error:nil];
+            self.downloadPath = outputPath;
+        }
+
+        if ([fm fileExistsAtPath:kSketchBetaPluginPath]) {
+            NSString *outputPath = [NSString stringWithFormat:@"%@/%@", kSketchBetaPluginPath, self.displayName];
+            [fm copyItemAtPath:tmpContentsPath toPath:outputPath error:nil];
+        }
+        
+        [fm removeItemAtPath:tmpContentsPath error:nil];
+
+        NSLog(@"Finished downloading %@", self.name);
         self.installed = [NSDate date];
-        self.downloadPath = outputPath;
+        
         [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
         [[NSNotificationCenter defaultCenter] postNotificationName:@"pluginStatusUpdated" object:nil];
     }];
