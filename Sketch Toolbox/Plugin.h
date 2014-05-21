@@ -16,7 +16,14 @@
 @property (nonatomic, retain) NSDate * installed;
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSString * owner;
+@property (nonatomic, retain) NSString * downloadPath;
+@property (nonatomic) UInt32 stars;
 
 -(void)download;
+-(void)delete;
+-(BOOL)isInstalled;
+-(NSString*)displayName;
+-(NSURL*)repoURL;
+
 
 @end

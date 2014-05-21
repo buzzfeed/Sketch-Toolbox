@@ -11,19 +11,24 @@
 
 @implementation STPluginCellView
 
--(IBAction)downloadButtonPressed:(id)sender {
-    [self.plugin download];
+-(IBAction)actionButtonPressed:(id)sender {
+    if (!self.plugin.isInstalled) [self.plugin download];
+    else [self.plugin delete];
+}
+
+-(void)infoButtonPressed:(id)sender {
+    [[NSWorkspace sharedWorkspace] openURL:self.plugin.repoURL];
 }
 
 -(void)populate {
-    self.name.stringValue = self.plugin.name;
+    self.name.stringValue = self.plugin.displayName;
     self.description.stringValue = self.plugin.desc;
-    if (self.plugin.installed > [NSDate dateWithTimeIntervalSince1970:978307200]) {
-        [self.downloadButton setTransparent:YES];
-        [self.downloadButton setEnabled:NO];
+    self.owner.stringValue = self.plugin.owner;
+    self.starCount.stringValue = [NSString stringWithFormat:@"%i", self.plugin.stars];
+    if (self.plugin.isInstalled) {
+        [self.actionButton setImage:[NSImage imageNamed:@"Trash"]];
     } else {
-        [self.downloadButton setTransparent:NO];
-        [self.downloadButton setEnabled:YES];
+        [self.actionButton setImage:[NSImage imageNamed:@"Download"]];
     }
 }
 

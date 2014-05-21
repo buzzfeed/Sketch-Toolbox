@@ -18,7 +18,7 @@
 
 - (IBAction)saveAction:(id)sender;
 
--(IBAction)triggerUpdates:(id)sender;
+
 -(IBAction)filterPlugins:(NSSearchField *)searchField;
 
 

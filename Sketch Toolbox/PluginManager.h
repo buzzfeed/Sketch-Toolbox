@@ -12,10 +12,8 @@
 
 @interface PluginManager : NSObject <NSURLConnectionDelegate>
 
-+ (id)sharedManager;
++(id)sharedManager;
 
--(NSArray*)getAllPlugins;
--(void)updatePlugins;
 -(void)downloadCatalog;
 
 @end

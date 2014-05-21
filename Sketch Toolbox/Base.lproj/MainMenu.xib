@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="5056" systemVersion="13C64" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="5056"/>
     </dependencies>
@@ -73,14 +73,14 @@
                 <rect key="frame" x="0.0" y="0.0" width="500" height="488"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <scrollView autohidesScrollers="YES" horizontalLineScroll="78" horizontalPageScroll="10" verticalLineScroll="78" verticalPageScroll="10" usesPredominantAxisScrolling="NO" id="wZh-Yh-EYf">
+                    <scrollView autohidesScrollers="YES" horizontalLineScroll="109" horizontalPageScroll="10" verticalLineScroll="109" verticalPageScroll="10" usesPredominantAxisScrolling="NO" id="wZh-Yh-EYf">
                         <rect key="frame" x="-1" y="-1" width="502" height="446"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <clipView key="contentView" id="0Qv-vq-Aez">
                             <rect key="frame" x="1" y="1" width="500" height="444"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
-                                <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" alternatingRowBackgroundColors="YES" columnReordering="NO" columnResizing="NO" multipleSelection="NO" emptySelection="NO" autosaveColumns="NO" typeSelect="NO" rowHeight="76" rowSizeStyle="automatic" viewBased="YES" id="tll-qL-Al8">
+                                <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" alternatingRowBackgroundColors="YES" columnReordering="NO" columnResizing="NO" multipleSelection="NO" emptySelection="NO" autosaveColumns="NO" typeSelect="NO" rowHeight="107" rowSizeStyle="automatic" viewBased="YES" id="tll-qL-Al8">
                                     <rect key="frame" x="0.0" y="0.0" width="500" height="444"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <size key="intercellSpacing" width="3" height="2"/>
@@ -101,11 +101,11 @@
                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                             <prototypeCellViews>
                                                 <tableCellView id="C1z-dv-ClF" customClass="STPluginCellView">
-                                                    <rect key="frame" x="1" y="1" width="497" height="76"/>
+                                                    <rect key="frame" x="1" y="1" width="497" height="107"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
                                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" id="4Sc-HC-EKv">
-                                                            <rect key="frame" x="10" y="44" width="384" height="23"/>
+                                                            <rect key="frame" x="10" y="75" width="392" height="23"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                             <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Name" id="hYg-uF-51G">
                                                                 <font key="font" metaFont="systemBold"/>
@@ -113,8 +113,26 @@
                                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                             </textFieldCell>
                                                         </textField>
+                                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" id="MIW-Rl-YRt">
+                                                            <rect key="frame" x="35" y="8" width="78" height="14"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                            <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Name" id="r2X-Kf-zhM">
+                                                                <font key="font" metaFont="smallSystem"/>
+                                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                            </textFieldCell>
+                                                        </textField>
+                                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" id="moX-uJ-fdK">
+                                                            <rect key="frame" x="139" y="8" width="35" height="14"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                            <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="0" id="xBq-Xc-AWM">
+                                                                <font key="font" metaFont="smallSystem"/>
+                                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                            </textFieldCell>
+                                                        </textField>
                                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" setsMaxLayoutWidthAtFirstLayout="YES" id="E2A-WJ-dae">
-                                                            <rect key="frame" x="10" y="9" width="409" height="37"/>
+                                                            <rect key="frame" x="10" y="40" width="392" height="37"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                             <textFieldCell key="cell" truncatesLastVisibleLine="YES" sendsActionOnEndEditing="YES" title="Description" id="cid-nH-aGY">
                                                                 <font key="font" metaFont="system"/>
@@ -123,21 +141,49 @@
                                                             </textFieldCell>
                                                         </textField>
                                                         <button verticalHuggingPriority="750" id="vYL-pv-Cug">
-                                                            <rect key="frame" x="440" y="25" width="39" height="21"/>
+                                                            <rect key="frame" x="446" y="43" width="30" height="18"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
-                                                            <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="Cloud_Download" imagePosition="only" alignment="center" state="on" imageScaling="proportionallyDown" inset="2" id="knQ-U3-fkP">
-                                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                                <font key="font" metaFont="system"/>
+                                                            <buttonCell key="cell" type="roundRect" bezelStyle="roundedRect" image="Download" imagePosition="overlaps" alignment="center" state="on" imageScaling="proportionallyDown" inset="2" id="knQ-U3-fkP">
+                                                                <behavior key="behavior" lightByContents="YES"/>
+                                                                <font key="font" metaFont="cellTitle"/>
                                                             </buttonCell>
                                                             <connections>
-                                                                <action selector="downloadButtonPressed:" target="C1z-dv-ClF" id="MJf-pL-VX0"/>
+                                                                <action selector="actionButtonPressed:" target="C1z-dv-ClF" id="7i1-oi-cXS"/>
                                                             </connections>
                                                         </button>
+                                                        <button verticalHuggingPriority="750" id="bUc-dl-PGD">
+                                                            <rect key="frame" x="408" y="43" width="30" height="18"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                                            <buttonCell key="cell" type="roundRect" bezelStyle="roundedRect" image="Github" imagePosition="overlaps" alignment="center" state="on" imageScaling="proportionallyDown" inset="2" id="aKm-vW-Sh1">
+                                                                <behavior key="behavior" lightByContents="YES"/>
+                                                                <font key="font" metaFont="cellTitle"/>
+                                                            </buttonCell>
+                                                            <connections>
+                                                                <action selector="infoButtonPressed:" target="C1z-dv-ClF" id="Ghh-01-HwU"/>
+                                                            </connections>
+                                                        </button>
+                                                        <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="t0z-De-VpJ">
+                                                            <rect key="frame" x="12" y="8" width="19" height="19"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="User" id="Hgi-e6-x0v"/>
+                                                        </imageView>
+                                                        <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="CHc-OI-vkt">
+                                                            <rect key="frame" x="116" y="8" width="19" height="19"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="Star" id="m41-Yf-wpY"/>
+                                                        </imageView>
+                                                        <colorWell bordered="NO" id="6kR-4q-6c0">
+                                                            <rect key="frame" x="12" y="32" width="170" height="1"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                            <color key="color" red="0.841796875" green="0.841796875" blue="0.841796875" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </colorWell>
                                                     </subviews>
                                                     <connections>
+                                                        <outlet property="actionButton" destination="vYL-pv-Cug" id="TBi-dZ-kuE"/>
                                                         <outlet property="description" destination="E2A-WJ-dae" id="sx2-ox-sPC"/>
-                                                        <outlet property="downloadButton" destination="vYL-pv-Cug" id="IXc-7j-4MR"/>
                                                         <outlet property="name" destination="4Sc-HC-EKv" id="565-96-Iyr"/>
+                                                        <outlet property="owner" destination="MIW-Rl-YRt" id="cwh-yZ-epK"/>
+                                                        <outlet property="starCount" destination="moX-uJ-fdK" id="j7t-jV-7Sd"/>
                                                     </connections>
                                                 </tableCellView>
                                             </prototypeCellViews>
@@ -156,20 +202,9 @@
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                     </scrollView>
-                    <button verticalHuggingPriority="750" id="iYI-eR-b64">
-                        <rect key="frame" x="10" y="451" width="148" height="25"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <buttonCell key="cell" type="squareTextured" title="Check for updates" bezelStyle="texturedSquare" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="FTi-0L-hwf">
-                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="system"/>
-                        </buttonCell>
-                        <connections>
-                            <action selector="triggerUpdates:" target="Voe-Tx-rLC" id="lZJ-nT-teh"/>
-                        </connections>
-                    </button>
                     <searchField verticalHuggingPriority="750" id="yLx-tt-8tM">
-                        <rect key="frame" x="291" y="453" width="189" height="22"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <rect key="frame" x="302" y="453" width="189" height="22"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                         <searchFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" usesSingleLineMode="YES" bezelStyle="round" id="bgK-GS-Rpy">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -184,6 +219,9 @@
         </window>
     </objects>
     <resources>
-        <image name="Cloud_Download" width="29" height="27"/>
+        <image name="Download" width="29" height="27"/>
+        <image name="Github" width="25" height="25"/>
+        <image name="Star" width="27" height="26"/>
+        <image name="User" width="25" height="31"/>
     </resources>
 </document>

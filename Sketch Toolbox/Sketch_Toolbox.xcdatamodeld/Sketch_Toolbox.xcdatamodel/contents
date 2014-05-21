@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5064" systemVersion="13D65" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5064" systemVersion="13C64" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Plugin" representedClassName="Plugin" syncable="YES">
         <attribute name="desc" attributeType="String" syncable="YES"/>
+        <attribute name="downloadPath" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="installed" optional="YES" attributeType="Date" minDateTimeInterval="0" minValueString="0" defaultDateTimeInterval="0" defaultValueString="nil" indexed="YES" syncable="YES"/>
         <attribute name="name" attributeType="String" indexed="YES" syncable="YES"/>
         <attribute name="owner" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="stars" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Plugin" positionX="-63" positionY="-18" width="128" height="105"/>
+        <element name="Plugin" positionX="-63" positionY="-18" width="128" height="135"/>
     </elements>
 </model>
