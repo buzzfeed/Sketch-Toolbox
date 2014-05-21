@@ -4,6 +4,8 @@ A __very basic__ prototype of a package manager for Sketch.app.
 
 Over the next few days, I'll be doing a lot of polishing of the interface and experience, as well as refactoring the code. There's a ton of room for improvement. I aim to have a solid beta launched by May 26th, along with a download site for the app so that you don't have to compile it on your own.
 
+In the meantime, you can run this version by opening in Xcode, and clicking the Run button in the upper left corner. If you run into any problems, or have any kind of feedback or suggestions, please create a GitHub issue.
+
 Please feel free to get involved if you're interested! You can email me at me @ shahr.uz or find me on [Twitter](http://twitter.com/shahruz).
 
 ![Screenshot of 0.0.3](https://i.cloudup.com/oAmTTNfpl0-3000x3000.png)
