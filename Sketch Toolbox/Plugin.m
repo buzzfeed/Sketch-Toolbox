@@ -41,20 +41,24 @@ NSString *const kSketchBetaPluginPath = @"~/Library/Application Support/com.bohe
         NSFileManager *fm = [NSFileManager defaultManager];
         [fm removeItemAtPath:tmpPath error:nil];
         
+        NSMutableArray *downloadPaths = [@[] mutableCopy];
+        
         if ([fm fileExistsAtPath:[kSketchAppStorePluginPath stringByExpandingTildeInPath]]) {
             NSString *outputPath = [NSString stringWithFormat:@"%@/%@", [kSketchAppStorePluginPath stringByExpandingTildeInPath], self.displayName];
             [fm copyItemAtPath:tmpContentsPath toPath:outputPath error:nil];
-            self.downloadPath = outputPath;
+            [downloadPaths addObject:outputPath];
         }
         
         if ([fm fileExistsAtPath:[kSketchBetaPluginPath stringByExpandingTildeInPath]]) {
             NSString *outputPath = [NSString stringWithFormat:@"%@/%@", [kSketchBetaPluginPath stringByExpandingTildeInPath], self.displayName];
             [fm copyItemAtPath:tmpContentsPath toPath:outputPath error:nil];
+            [downloadPaths addObject:outputPath];
         }
         
         [fm removeItemAtPath:tmpContentsPath error:nil];
         
         NSLog(@"Finished downloading %@", self.name);
+        self.downloadPath = [NSKeyedArchiver archivedDataWithRootObject:downloadPaths];
         self.installed = [NSDate date];
         
         [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
@@ -66,13 +70,12 @@ NSString *const kSketchBetaPluginPath = @"~/Library/Application Support/com.bohe
 -(void)delete {
     if (!self.isInstalled) return;
     NSFileManager *fm = [NSFileManager defaultManager];
-    [fm removeItemAtPath:self.downloadPath error:nil];
     
-    if ([fm fileExistsAtPath:[kSketchBetaPluginPath stringByExpandingTildeInPath]]) {
-        NSString *betaDownloadPath = [self.downloadPath stringByReplacingOccurrencesOfString:[kSketchAppStorePluginPath stringByExpandingTildeInPath] withString:[kSketchBetaPluginPath stringByExpandingTildeInPath]];
-        [fm removeItemAtPath:betaDownloadPath error:nil];
-    }
-    
+    NSArray *downloadPaths = [NSKeyedUnarchiver unarchiveObjectWithData:self.downloadPath];
+    [downloadPaths enumerateObjectsUsingBlock:^(NSString *downloadPath, NSUInteger idx, BOOL *stop) {
+        [fm removeItemAtPath:downloadPath error:nil];
+    }];
+
     self.installed = nil;
     self.downloadPath = nil;
     [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
