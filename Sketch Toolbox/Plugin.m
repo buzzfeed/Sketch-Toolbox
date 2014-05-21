@@ -9,48 +9,20 @@
 #import "Plugin.h"
 #import "SSZipArchive.h"
 
-#define kSketchAppStorePluginPath [@"~/Library/Containers/com.bohemiancoding.sketch3/Data/Library/Application Support/com.bohemiancoding.sketch3/Plugins/"  stringByExpandingTildeInPath]
-#define kSketchBetaPluginPath [@"~/Library/Application Support/com.bohemiancoding.sketch3/Plugins/" stringByExpandingTildeInPath]
+NSString *const kSketchAppStorePluginPath = @"~/Library/Containers/com.bohemiancoding.sketch3/Data/Library/Application Support/com.bohemiancoding.sketch3/Plugins/";
+NSString *const kSketchBetaPluginPath = @"~/Library/Application Support/com.bohemiancoding.sketch3/Plugins/";
 
 @implementation Plugin
 
-@dynamic desc;
-@dynamic installed;
 @dynamic name;
 @dynamic owner;
+@dynamic desc;
+@dynamic installed;
 @dynamic stars;
 @dynamic downloadPath;
 @dynamic lastModified;
 
--(BOOL)isInstalled {
-    return self.installed != nil;
-}
-
--(NSString*)displayName {
-    return [[self.name stringByReplacingOccurrencesOfString:@"-" withString:@" "] capitalizedString];
-}
-
--(NSURL*)repoURL {
-    return [NSURL URLWithString:
-            [NSString stringWithFormat:@"https://github.com/%@/%@", self.owner, self.name]];
-}
-
--(void)delete {
-    if (!self.isInstalled) return;
-    NSFileManager *fm = [NSFileManager defaultManager];
-    [fm removeItemAtPath:self.downloadPath error:nil];
-    
-    if ([fm fileExistsAtPath:kSketchBetaPluginPath]) {
-        NSString *betaDownloadPath = [self.downloadPath stringByReplacingOccurrencesOfString:kSketchAppStorePluginPath withString:kSketchBetaPluginPath];
-        [fm removeItemAtPath:betaDownloadPath error:nil];
-    }
-    
-    self.installed = nil;
-    self.downloadPath = nil;
-    [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"pluginStatusUpdated" object:nil];    
-}
-
+#pragma mark - Main Methods
 -(void)download {
     if (self.isInstalled) return;
     NSLog(@"Downloading %@", self.name);
@@ -69,26 +41,57 @@
         NSFileManager *fm = [NSFileManager defaultManager];
         [fm removeItemAtPath:tmpPath error:nil];
         
-        if ([fm fileExistsAtPath:kSketchBetaPluginPath]) {
-            NSString *outputPath = [NSString stringWithFormat:@"%@/%@", kSketchAppStorePluginPath, self.displayName];
+        if ([fm fileExistsAtPath:[kSketchAppStorePluginPath stringByExpandingTildeInPath]]) {
+            NSString *outputPath = [NSString stringWithFormat:@"%@/%@", [kSketchAppStorePluginPath stringByExpandingTildeInPath], self.displayName];
             [fm copyItemAtPath:tmpContentsPath toPath:outputPath error:nil];
             self.downloadPath = outputPath;
         }
-
-        if ([fm fileExistsAtPath:kSketchBetaPluginPath]) {
-            NSString *outputPath = [NSString stringWithFormat:@"%@/%@", kSketchBetaPluginPath, self.displayName];
+        
+        if ([fm fileExistsAtPath:[kSketchBetaPluginPath stringByExpandingTildeInPath]]) {
+            NSString *outputPath = [NSString stringWithFormat:@"%@/%@", [kSketchBetaPluginPath stringByExpandingTildeInPath], self.displayName];
             [fm copyItemAtPath:tmpContentsPath toPath:outputPath error:nil];
         }
         
         [fm removeItemAtPath:tmpContentsPath error:nil];
-
+        
         NSLog(@"Finished downloading %@", self.name);
         self.installed = [NSDate date];
         
         [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
         [[NSNotificationCenter defaultCenter] postNotificationName:@"pluginStatusUpdated" object:nil];
     }];
+    
+}
 
+-(void)delete {
+    if (!self.isInstalled) return;
+    NSFileManager *fm = [NSFileManager defaultManager];
+    [fm removeItemAtPath:self.downloadPath error:nil];
+    
+    if ([fm fileExistsAtPath:[kSketchBetaPluginPath stringByExpandingTildeInPath]]) {
+        NSString *betaDownloadPath = [self.downloadPath stringByReplacingOccurrencesOfString:[kSketchAppStorePluginPath stringByExpandingTildeInPath] withString:[kSketchBetaPluginPath stringByExpandingTildeInPath]];
+        [fm removeItemAtPath:betaDownloadPath error:nil];
+    }
+    
+    self.installed = nil;
+    self.downloadPath = nil;
+    [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"pluginStatusUpdated" object:nil];    
+}
+
+#pragma mark - Properties
+
+-(BOOL)isInstalled {
+    return self.installed != nil;
+}
+
+-(NSString*)displayName {
+    return [[self.name stringByReplacingOccurrencesOfString:@"-" withString:@" "] capitalizedString];
+}
+
+-(NSURL*)repoURL {
+    return [NSURL URLWithString:
+            [NSString stringWithFormat:@"https://github.com/%@/%@", self.owner, self.name]];
 }
 
 @end

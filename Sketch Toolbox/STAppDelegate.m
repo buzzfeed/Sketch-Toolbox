@@ -24,16 +24,15 @@
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize managedObjectContext = _managedObjectContext;
 
+#pragma mark - Main app
+
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     [MagicalRecord setupAutoMigratingCoreDataStack];
-    
     [self migrate];
-    
     [self startApp];
     pluginManager = [PluginManager sharedManager];
     [pluginManager downloadCatalog];
 }
-
 
 -(void)migrate {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -56,16 +55,16 @@
     activePlugins = plugins;
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(reloadTableData)
-                                                 name:@"pluginStatusUpdated"
-                                               object:nil];
-
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadTableData) name:@"pluginStatusUpdated" object:nil];
 }
 
+#pragma mark - Plugins Table
+
 -(void)reloadTableData {
-    plugins = [Plugin MR_findAllSortedBy:@"name" ascending:YES];
-    activePlugins = plugins;
+    if (activePlugins == plugins) {
+        plugins = [Plugin MR_findAllSortedBy:@"name" ascending:YES];
+        activePlugins = plugins;
+    }
     [self.tableView reloadData];
 }
 
@@ -112,6 +111,8 @@
 - (BOOL)selectionShouldChangeInTableView:(NSTableView *)tableView {
     return NO;
 }
+
+#pragma mark - Core Data
 
 - (NSString *)applicationFilesDirectory {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask, YES);

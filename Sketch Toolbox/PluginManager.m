@@ -32,6 +32,8 @@
     }];
 }
 
+#pragma mark - Private
+
 -(void)upsertPlugin:(NSDictionary *)dictionary {
 
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(name = %@) AND (owner =%@)", dictionary[@"name"], dictionary[@"owner"]];

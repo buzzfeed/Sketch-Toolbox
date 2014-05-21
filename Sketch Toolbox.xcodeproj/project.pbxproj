@@ -168,6 +168,15 @@
 			name = Views;
 			sourceTree = "<group>";
 		};
+		EA5913BA192D4B2D00FF4CC0 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				EA70F99A192AC88D00315D05 /* PluginManager.h */,
+				EA70F99B192AC88D00315D05 /* PluginManager.m */,
+			);
+			name = Managers;
+			sourceTree = "<group>";
+		};
 		EA70F99D192ACD5300315D05 /* SSZipArchive */ = {
 			isa = PBXGroup;
 			children = (
@@ -350,10 +359,9 @@
 			children = (
 				EA86F5DF192AB55F00B834ED /* STAppDelegate.h */,
 				EA86F5E0192AB55F00B834ED /* STAppDelegate.m */,
-				EA70F99A192AC88D00315D05 /* PluginManager.h */,
-				EA70F99B192AC88D00315D05 /* PluginManager.m */,
-				0E62CEEF192B17E500921260 /* Views */,
+				EA5913BA192D4B2D00FF4CC0 /* Managers */,
 				EA75D43B192AC26C005CF0DF /* Models */,
+				0E62CEEF192B17E500921260 /* Views */,
 				EA86F5E8192AB55F00B834ED /* Images.xcassets */,
 				EA86F5D4192AB55F00B834ED /* Supporting Files */,
 			);
