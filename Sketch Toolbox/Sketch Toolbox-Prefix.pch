@@ -9,4 +9,5 @@
 
     #import "CoreData+MagicalRecord.h"
 
+    #import "Constants.h"
 #endif

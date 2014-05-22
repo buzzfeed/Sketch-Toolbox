@@ -15,5 +15,6 @@
 +(id)sharedManager;
 
 -(void)downloadCatalog;
+-(NSArray*)localPlugins;
 
 @end

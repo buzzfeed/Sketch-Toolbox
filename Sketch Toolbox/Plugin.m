@@ -9,9 +9,6 @@
 #import "Plugin.h"
 #import "SSZipArchive.h"
 
-NSString *const kSketchAppStorePluginPath = @"~/Library/Containers/com.bohemiancoding.sketch3/Data/Library/Application Support/com.bohemiancoding.sketch3/Plugins/";
-NSString *const kSketchBetaPluginPath = @"~/Library/Application Support/com.bohemiancoding.sketch3/Plugins/";
-
 @implementation Plugin
 
 @dynamic name;
@@ -21,6 +18,7 @@ NSString *const kSketchBetaPluginPath = @"~/Library/Application Support/com.bohe
 @dynamic stars;
 @dynamic downloadPath;
 @dynamic lastModified;
+@dynamic directoryName;
 
 #pragma mark - Main Methods
 -(void)download {
@@ -70,12 +68,10 @@ NSString *const kSketchBetaPluginPath = @"~/Library/Application Support/com.bohe
 -(void)delete {
     if (!self.isInstalled) return;
     NSFileManager *fm = [NSFileManager defaultManager];
-    
     NSArray *downloadPaths = [NSKeyedUnarchiver unarchiveObjectWithData:self.downloadPath];
     [downloadPaths enumerateObjectsUsingBlock:^(NSString *downloadPath, NSUInteger idx, BOOL *stop) {
         [fm removeItemAtPath:downloadPath error:nil];
     }];
-
     self.installed = nil;
     self.downloadPath = nil;
     [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];

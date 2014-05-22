@@ -23,7 +23,7 @@
 }
 
 -(void)downloadCatalog {
-    NSURL *requestURL = [NSURL URLWithString:@"https://raw.githubusercontent.com/sketchplugins/plugin-directory/master/plugins.json"];
+    NSURL *requestURL = [NSURL URLWithString:kPluginCatalogURL];
     NSURLRequest *request = [NSURLRequest requestWithURL:requestURL];
     NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
     NSArray *remotePlugins = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
@@ -32,11 +32,32 @@
     }];
 }
 
+-(NSArray *)localPlugins {
+    NSFileManager *fm = [NSFileManager defaultManager];
+    NSArray *paths = @[[kSketchAppStorePluginPath stringByExpandingTildeInPath], [kSketchBetaPluginPath stringByExpandingTildeInPath]];
+    NSMutableArray *localPlugins = [@[] mutableCopy];
+    
+    [paths enumerateObjectsUsingBlock:^(NSString *path, NSUInteger idx, BOOL *stop) {
+        NSArray *plugins = [fm contentsOfDirectoryAtPath:path error:nil];
+        [plugins enumerateObjectsUsingBlock:^(NSString *fileName, NSUInteger idx, BOOL *stop) {
+            if ([[fileName substringToIndex:1] isEqualToString:@"."]) return;
+            Plugin *plugin = [Plugin MR_findFirstByAttribute:@"directoryName" withValue:fileName];
+            if (!plugin) {
+                [localPlugins addObject:@{@"fileName": fileName,
+                                                 @"type": ([path isEqualToString:[kSketchAppStorePluginPath stringByExpandingTildeInPath]] ? @"App Store" : @"Beta"),
+                                                 @"fileURL": [path stringByAppendingPathComponent:fileName]
+                                                 }];
+            }
+        }];
+    }];
+    return [localPlugins copy];
+}
+
 #pragma mark - Private
 
 -(void)upsertPlugin:(NSDictionary *)dictionary {
 
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(name = %@) AND (owner =%@)", dictionary[@"name"], dictionary[@"owner"]];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(name = %@) AND (owner = %@)", dictionary[@"name"], dictionary[@"owner"]];
     
     Plugin *plugin = [Plugin MR_findFirstWithPredicate:predicate];
     
@@ -46,6 +67,7 @@
         plugin.owner = dictionary[@"owner"];
         plugin.installed = nil;
         plugin.lastModified = [NSDate dateWithTimeIntervalSince1970:0];
+        plugin.directoryName = plugin.displayName;
     }
 
     plugin.desc = dictionary[@"description"];

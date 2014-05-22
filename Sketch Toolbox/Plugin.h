@@ -18,6 +18,7 @@
 @property (nonatomic, retain) NSDate * installed;
 @property (nonatomic, retain) NSData * downloadPath;
 @property (nonatomic, retain) NSDate * lastModified;
+@property (nonatomic, retain) NSString * directoryName;
 @property (nonatomic) UInt32 stars;
 
 -(BOOL)isInstalled;

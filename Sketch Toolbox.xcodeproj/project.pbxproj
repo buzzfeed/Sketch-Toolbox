@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0E5D4F26192B15560084F30C /* STPluginCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E5D4F25192B15560084F30C /* STPluginCellView.m */; };
+		EA5913BD192D627E00FF4CC0 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = EA5913BC192D627E00FF4CC0 /* Constants.m */; };
 		EA70F99C192AC88D00315D05 /* PluginManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EA70F99B192AC88D00315D05 /* PluginManager.m */; };
 		EA70F9AA192ACD5300315D05 /* ioapi.c in Sources */ = {isa = PBXBuildFile; fileRef = EA70F9A0192ACD5300315D05 /* ioapi.c */; };
 		EA70F9AB192ACD5300315D05 /* mztools.c in Sources */ = {isa = PBXBuildFile; fileRef = EA70F9A2192ACD5300315D05 /* mztools.c */; };
@@ -55,6 +56,8 @@
 /* Begin PBXFileReference section */
 		0E5D4F24192B15560084F30C /* STPluginCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STPluginCellView.h; sourceTree = "<group>"; };
 		0E5D4F25192B15560084F30C /* STPluginCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STPluginCellView.m; sourceTree = "<group>"; };
+		EA5913BC192D627E00FF4CC0 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
+		EA5913BE192D691200FF4CC0 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		EA70F99A192AC88D00315D05 /* PluginManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PluginManager.h; sourceTree = "<group>"; };
 		EA70F99B192AC88D00315D05 /* PluginManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PluginManager.m; sourceTree = "<group>"; };
 		EA70F99F192ACD5300315D05 /* crypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = crypt.h; sourceTree = "<group>"; };
@@ -363,6 +366,8 @@
 				EA75D43B192AC26C005CF0DF /* Models */,
 				0E62CEEF192B17E500921260 /* Views */,
 				EA86F5E8192AB55F00B834ED /* Images.xcassets */,
+				EA5913BE192D691200FF4CC0 /* Constants.h */,
+				EA5913BC192D627E00FF4CC0 /* Constants.m */,
 				EA86F5D4192AB55F00B834ED /* Supporting Files */,
 			);
 			path = "Sketch Toolbox";
@@ -491,6 +496,7 @@
 				EA75D487192AC4C4005CF0DF /* NSManagedObjectContext+MagicalRecord.m in Sources */,
 				EA75D47D192AC4C4005CF0DF /* NSNumber+MagicalDataImport.m in Sources */,
 				EA75D482192AC4C4005CF0DF /* NSManagedObject+MagicalDataImport.m in Sources */,
+				EA5913BD192D627E00FF4CC0 /* Constants.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
