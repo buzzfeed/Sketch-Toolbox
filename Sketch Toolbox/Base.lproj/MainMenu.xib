@@ -18,57 +18,11 @@
             </connections>
         </customObject>
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
-        <menu title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
-            <items>
-                <menuItem title="Sketch Toolbox" id="1Xt-HY-uBw">
-                    <modifierMask key="keyEquivalentModifierMask"/>
-                    <menu key="submenu" title="Sketch Toolbox" systemMenu="apple" id="uQy-DD-JDr">
-                        <items>
-                            <menuItem title="About Sketch Toolbox" id="5kV-Vb-QxS">
-                                <modifierMask key="keyEquivalentModifierMask"/>
-                                <connections>
-                                    <action selector="orderFrontStandardAboutPanel:" target="-1" id="Exp-CZ-Vem"/>
-                                </connections>
-                            </menuItem>
-                            <menuItem isSeparatorItem="YES" id="VOq-y0-SEH"/>
-                            <menuItem title="Services" id="NMo-om-nkz">
-                                <modifierMask key="keyEquivalentModifierMask"/>
-                                <menu key="submenu" title="Services" systemMenu="services" id="hz9-B4-Xy5"/>
-                            </menuItem>
-                            <menuItem isSeparatorItem="YES" id="4je-JR-u6R"/>
-                            <menuItem title="Hide Sketch Toolbox" keyEquivalent="h" id="Olw-nP-bQN">
-                                <connections>
-                                    <action selector="hide:" target="-1" id="PnN-Uc-m68"/>
-                                </connections>
-                            </menuItem>
-                            <menuItem title="Hide Others" keyEquivalent="h" id="Vdr-fp-XzO">
-                                <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
-                                <connections>
-                                    <action selector="hideOtherApplications:" target="-1" id="VT4-aY-XCT"/>
-                                </connections>
-                            </menuItem>
-                            <menuItem title="Show All" id="Kd2-mp-pUS">
-                                <modifierMask key="keyEquivalentModifierMask"/>
-                                <connections>
-                                    <action selector="unhideAllApplications:" target="-1" id="Dhg-Le-xox"/>
-                                </connections>
-                            </menuItem>
-                            <menuItem isSeparatorItem="YES" id="kCx-OE-vgT"/>
-                            <menuItem title="Quit Sketch Toolbox" keyEquivalent="q" id="4sb-4s-VLi">
-                                <connections>
-                                    <action selector="terminate:" target="-1" id="Te7-pn-YzF"/>
-                                </connections>
-                            </menuItem>
-                        </items>
-                    </menu>
-                </menuItem>
-            </items>
-        </menu>
         <window title="Sketch Toolbox" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" texturedBackground="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="335" y="390" width="500" height="488"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1178"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1200"/>
             <view key="contentView" id="EiT-Mj-1SZ">
                 <rect key="frame" x="0.0" y="0.0" width="500" height="488"/>
                 <autoresizingMask key="autoresizingMask"/>
@@ -214,9 +168,130 @@
                             <action selector="filterPlugins:" target="Voe-Tx-rLC" id="8eO-cU-HYH"/>
                         </connections>
                     </searchField>
+                    <segmentedControl verticalHuggingPriority="750" id="D5M-im-bV3">
+                        <rect key="frame" x="9" y="451" width="112" height="25"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <segmentedCell key="cell" alignment="left" style="automatic" trackingMode="selectOne" id="slY-aY-0t8">
+                            <font key="font" metaFont="system"/>
+                            <segments>
+                                <segment label="All" width="32"/>
+                                <segment label="Installed" selected="YES" tag="1"/>
+                            </segments>
+                        </segmentedCell>
+                    </segmentedControl>
                 </subviews>
             </view>
         </window>
+        <menu title="Main Menu" systemMenu="main" id="EIy-nK-C1y">
+            <items>
+                <menuItem title="Sketch Toolbox" id="8TN-Gh-ty4">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <menu key="submenu" title="Sketch Toolbox" systemMenu="apple" id="ld3-2B-ncW">
+                        <items>
+                            <menuItem title="About Sketch Toolbox" state="on" id="NPb-tc-EJ7">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="orderFrontStandardAboutPanel:" target="-1" id="jqq-mE-mF0"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="5Vv-wl-45a"/>
+                            <menuItem title="Services" id="cgq-f0-Nqv">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="Services" systemMenu="services" id="p50-bn-b9j"/>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="Nkb-yh-cYK"/>
+                            <menuItem title="Hide Sketch Toolbox" keyEquivalent="h" id="ogc-57-hAs">
+                                <connections>
+                                    <action selector="hide:" target="-1" id="v4a-yB-c2V"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Hide Others" keyEquivalent="h" id="Im4-ZX-VnS">
+                                <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
+                                <connections>
+                                    <action selector="hideOtherApplications:" target="-1" id="N6K-l1-7nl"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Show All" id="7Wy-nJ-PgQ">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="unhideAllApplications:" target="-1" id="gss-Go-8v3"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="jWN-2z-uOg"/>
+                            <menuItem title="Quit Sketch Toolbox" keyEquivalent="q" id="Gyu-YJ-ELY">
+                                <connections>
+                                    <action selector="terminate:" target="-1" id="Ad3-Io-4ze"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+                <menuItem title="File" id="0RD-Co-gAH">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <menu key="submenu" title="File" id="hUe-Wt-QCJ">
+                        <items>
+                            <menuItem title="Close" keyEquivalent="w" id="znK-O6-IYB">
+                                <connections>
+                                    <action selector="terminate:" target="-1" id="vzV-TD-QLI"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+                <menuItem title="Edit" id="y5d-Fj-8n6">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <menu key="submenu" title="Edit" id="Adc-BU-5CR">
+                        <items>
+                            <menuItem title="Cut" keyEquivalent="x" id="CPZ-3R-hxd">
+                                <connections>
+                                    <action selector="cut:" target="-1" id="Fxc-ZM-V5f"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Copy" keyEquivalent="c" id="7Mq-11-Bz1">
+                                <connections>
+                                    <action selector="copy:" target="-1" id="0jD-eU-6v7"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Paste" keyEquivalent="v" id="7E9-d5-3b8">
+                                <connections>
+                                    <action selector="paste:" target="-1" id="KI7-b1-BMK"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Select All" keyEquivalent="a" id="FcB-MB-TgI">
+                                <connections>
+                                    <action selector="selectAll:" target="-1" id="zwT-p7-6KY"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+                <menuItem title="Window" id="7Jh-5l-eQQ">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <menu key="submenu" title="Window" systemMenu="window" id="SP8-ze-rzd">
+                        <items>
+                            <menuItem title="Minimize" keyEquivalent="m" id="0jb-vZ-hML">
+                                <connections>
+                                    <action selector="performMiniaturize:" target="-1" id="jPs-6f-uvc"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Zoom" id="Z3i-7z-VW4">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="performZoom:" target="-1" id="rAq-Ki-Vxm"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="1Z5-WC-hiy"/>
+                            <menuItem title="Bring All to Front" id="Eaj-lt-X1g">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="arrangeInFront:" target="-1" id="1hp-zF-aPK"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+            </items>
+        </menu>
     </objects>
     <resources>
         <image name="Download" width="29" height="27"/>
