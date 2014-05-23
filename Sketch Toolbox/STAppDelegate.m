@@ -69,6 +69,16 @@
     [self.tableView reloadData];
 }
 
+-(IBAction)segmentSelected:(NSSegmentedControl*)sender {
+    if (sender.selectedSegment == 0) {
+        activePlugins = plugins;
+    } else if (sender.selectedSegment == 1) {
+        NSPredicate *installed = [NSPredicate predicateWithFormat:@"installed != nil"];
+        activePlugins = [Plugin MR_findAllSortedBy:@"name" ascending:YES withPredicate:installed];
+    }
+    [self.tableView reloadData];
+}
+
 -(IBAction)filterPlugins:(NSSearchField *)searchField {
 	NSMutableString *searchText = [NSMutableString stringWithString:[searchField stringValue]];
 	while ([searchText rangeOfString:@"  "].location != NSNotFound) {

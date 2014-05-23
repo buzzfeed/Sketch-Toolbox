@@ -59,7 +59,7 @@
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
                                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" id="4Sc-HC-EKv">
-                                                            <rect key="frame" x="10" y="75" width="392" height="23"/>
+                                                            <rect key="frame" x="10" y="75" width="347" height="23"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                             <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Name" id="hYg-uF-51G">
                                                                 <font key="font" metaFont="systemBold"/>
@@ -86,7 +86,7 @@
                                                             </textFieldCell>
                                                         </textField>
                                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" setsMaxLayoutWidthAtFirstLayout="YES" id="E2A-WJ-dae">
-                                                            <rect key="frame" x="10" y="40" width="392" height="37"/>
+                                                            <rect key="frame" x="10" y="41" width="347" height="37"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                             <textFieldCell key="cell" truncatesLastVisibleLine="YES" sendsActionOnEndEditing="YES" title="Description" id="cid-nH-aGY">
                                                                 <font key="font" metaFont="system"/>
@@ -94,35 +94,13 @@
                                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                             </textFieldCell>
                                                         </textField>
-                                                        <button verticalHuggingPriority="750" id="vYL-pv-Cug">
-                                                            <rect key="frame" x="446" y="43" width="30" height="18"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
-                                                            <buttonCell key="cell" type="roundRect" bezelStyle="roundedRect" image="Download" imagePosition="overlaps" alignment="center" state="on" imageScaling="proportionallyDown" inset="2" id="knQ-U3-fkP">
-                                                                <behavior key="behavior" lightByContents="YES"/>
-                                                                <font key="font" metaFont="cellTitle"/>
-                                                            </buttonCell>
-                                                            <connections>
-                                                                <action selector="actionButtonPressed:" target="C1z-dv-ClF" id="7i1-oi-cXS"/>
-                                                            </connections>
-                                                        </button>
-                                                        <button verticalHuggingPriority="750" id="bUc-dl-PGD">
-                                                            <rect key="frame" x="408" y="43" width="30" height="18"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
-                                                            <buttonCell key="cell" type="roundRect" bezelStyle="roundedRect" image="Github" imagePosition="overlaps" alignment="center" state="on" imageScaling="proportionallyDown" inset="2" id="aKm-vW-Sh1">
-                                                                <behavior key="behavior" lightByContents="YES"/>
-                                                                <font key="font" metaFont="cellTitle"/>
-                                                            </buttonCell>
-                                                            <connections>
-                                                                <action selector="infoButtonPressed:" target="C1z-dv-ClF" id="Ghh-01-HwU"/>
-                                                            </connections>
-                                                        </button>
                                                         <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="t0z-De-VpJ">
-                                                            <rect key="frame" x="12" y="8" width="19" height="19"/>
+                                                            <rect key="frame" x="12" y="7" width="22" height="16"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                             <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="User" id="Hgi-e6-x0v"/>
                                                         </imageView>
                                                         <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="CHc-OI-vkt">
-                                                            <rect key="frame" x="116" y="8" width="19" height="19"/>
+                                                            <rect key="frame" x="116" y="7" width="22" height="16"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                             <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="Star" id="m41-Yf-wpY"/>
                                                         </imageView>
@@ -131,9 +109,31 @@
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                             <color key="color" red="0.841796875" green="0.841796875" blue="0.841796875" alpha="1" colorSpace="calibratedRGB"/>
                                                         </colorWell>
+                                                        <button verticalHuggingPriority="750" id="9HP-Xd-tM3">
+                                                            <rect key="frame" x="359" y="20" width="138" height="32"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                                            <buttonCell key="cell" type="push" title="Open in GitHub" bezelStyle="rounded" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="d2E-9a-pEH">
+                                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                                <font key="font" metaFont="system"/>
+                                                            </buttonCell>
+                                                            <connections>
+                                                                <action selector="infoButtonPressed:" target="C1z-dv-ClF" id="heh-QD-HgL"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button verticalHuggingPriority="750" id="WhX-jB-rVM">
+                                                            <rect key="frame" x="363" y="51" width="129" height="32"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                                            <buttonCell key="cell" type="push" title="Install" bezelStyle="rounded" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="JbC-ds-mUZ">
+                                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                                <font key="font" metaFont="system"/>
+                                                            </buttonCell>
+                                                            <connections>
+                                                                <action selector="actionButtonPressed:" target="C1z-dv-ClF" id="YcG-VA-eyR"/>
+                                                            </connections>
+                                                        </button>
                                                     </subviews>
                                                     <connections>
-                                                        <outlet property="actionButton" destination="vYL-pv-Cug" id="TBi-dZ-kuE"/>
+                                                        <outlet property="actionButton" destination="WhX-jB-rVM" id="KQx-1Y-AYa"/>
                                                         <outlet property="description" destination="E2A-WJ-dae" id="sx2-ox-sPC"/>
                                                         <outlet property="name" destination="4Sc-HC-EKv" id="565-96-Iyr"/>
                                                         <outlet property="owner" destination="MIW-Rl-YRt" id="cwh-yZ-epK"/>
@@ -174,10 +174,13 @@
                         <segmentedCell key="cell" alignment="left" style="automatic" trackingMode="selectOne" id="slY-aY-0t8">
                             <font key="font" metaFont="system"/>
                             <segments>
-                                <segment label="All" width="32"/>
-                                <segment label="Installed" selected="YES" tag="1"/>
+                                <segment label="All" width="32" selected="YES"/>
+                                <segment label="Installed" tag="1"/>
                             </segments>
                         </segmentedCell>
+                        <connections>
+                            <action selector="segmentSelected:" target="Voe-Tx-rLC" id="PW8-Qz-La1"/>
+                        </connections>
                     </segmentedControl>
                 </subviews>
             </view>
@@ -294,8 +297,6 @@
         </menu>
     </objects>
     <resources>
-        <image name="Download" width="29" height="27"/>
-        <image name="Github" width="25" height="25"/>
         <image name="Star" width="27" height="26"/>
         <image name="User" width="25" height="31"/>
     </resources>

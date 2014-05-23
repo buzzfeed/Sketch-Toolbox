@@ -9,10 +9,16 @@
 #import "STPluginCellView.h"
 #import "Plugin.h"
 
+#define kDownloadingTag 999
+
 @implementation STPluginCellView
 
--(IBAction)actionButtonPressed:(id)sender {
-    if (!self.plugin.isInstalled) [self.plugin download];
+-(IBAction)actionButtonPressed:(NSButton*)sender {
+    if (!self.plugin.isInstalled) {
+        [self.actionButton setTag:kDownloadingTag];
+        [sender setTitle:@"Downloading..."];
+        [self.plugin download];
+    }
     else [self.plugin delete];
 }
 
@@ -26,9 +32,12 @@
     self.owner.stringValue = self.plugin.owner;
     self.starCount.stringValue = [NSString stringWithFormat:@"%i", self.plugin.stars];
     if (self.plugin.isInstalled) {
-        [self.actionButton setImage:[NSImage imageNamed:@"Trash"]];
+        if (self.actionButton.tag == kDownloadingTag) self.actionButton.tag = 0;
+        [self.actionButton setTitle:@"Uninstall"];
+    } else if (self.actionButton.tag == kDownloadingTag) {
+        [self.actionButton setTitle:@"Downloading..."];
     } else {
-        [self.actionButton setImage:[NSImage imageNamed:@"Download"]];
+        [self.actionButton setTitle:@"Install"];
     }
 }
 

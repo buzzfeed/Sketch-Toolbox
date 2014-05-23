@@ -20,7 +20,7 @@
 
 
 -(IBAction)filterPlugins:(NSSearchField *)searchField;
-
+-(IBAction)segmentSelected:(NSSegmentedControl*)sender;
 
 - (NSString *)applicationFilesDirectory;
 
