@@ -12,6 +12,13 @@
 
 @interface Plugin : NSManagedObject
 
+
+typedef NS_ENUM(UInt16, PluginState) {
+    PluginStateUninstalled,
+    PluginStateInstalled,
+    PluginStateDownloading
+};
+
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSString * owner;
 @property (nonatomic, retain) NSString * desc;
@@ -20,6 +27,7 @@
 @property (nonatomic, retain) NSDate * lastModified;
 @property (nonatomic, retain) NSString * directoryName;
 @property (nonatomic) UInt32 stars;
+@property (nonatomic) UInt16 state;
 
 -(BOOL)isInstalled;
 

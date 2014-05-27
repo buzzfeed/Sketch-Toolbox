@@ -9,8 +9,9 @@
         <attribute name="name" attributeType="String" indexed="YES" syncable="YES"/>
         <attribute name="owner" attributeType="String" indexed="YES" syncable="YES"/>
         <attribute name="stars" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="state" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Plugin" positionX="-63" positionY="-18" width="128" height="165"/>
+        <element name="Plugin" positionX="-63" positionY="-18" width="128" height="180"/>
     </elements>
 </model>

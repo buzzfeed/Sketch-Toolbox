@@ -19,11 +19,14 @@
 @dynamic downloadPath;
 @dynamic lastModified;
 @dynamic directoryName;
+@dynamic state;
 
 #pragma mark - Main Methods
 -(void)download {
     if (self.isInstalled) return;
     NSLog(@"Downloading %@", self.name);
+    self.state = PluginStateDownloading;
+    
     NSURL *url = [NSURL URLWithString:
                   [NSString stringWithFormat:
                    @"%@/archive/master.zip", self.repoURL]];
@@ -58,6 +61,7 @@
         NSLog(@"Finished downloading %@", self.name);
         self.downloadPath = [NSKeyedArchiver archivedDataWithRootObject:downloadPaths];
         self.installed = [NSDate date];
+        self.state = PluginStateInstalled;
         
         [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
         [[NSNotificationCenter defaultCenter] postNotificationName:@"pluginStatusUpdated" object:nil];
@@ -74,6 +78,7 @@
     }];
     self.installed = nil;
     self.downloadPath = nil;
+    self.state = PluginStateUninstalled;
     [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"pluginStatusUpdated" object:nil];    
 }
@@ -81,7 +86,7 @@
 #pragma mark - Properties
 
 -(BOOL)isInstalled {
-    return self.installed != nil;
+    return self.state == PluginStateInstalled || self.state == PluginStateDownloading;
 }
 
 -(NSString*)displayName {
