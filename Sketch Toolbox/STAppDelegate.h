@@ -21,6 +21,7 @@
 
 -(IBAction)filterPlugins:(NSSearchField *)searchField;
 -(IBAction)segmentSelected:(NSSegmentedControl*)sender;
+-(IBAction)feedbackEmailClicked:(id)sender;
 
 - (NSString *)applicationFilesDirectory;
 

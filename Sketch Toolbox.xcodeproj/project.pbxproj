@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0E5D4F26192B15560084F30C /* STPluginCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E5D4F25192B15560084F30C /* STPluginCellView.m */; };
+		EA12D97F19354808000E5232 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = EA12D97E19354808000E5232 /* dsa_pub.pem */; };
 		EA5913BD192D627E00FF4CC0 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = EA5913BC192D627E00FF4CC0 /* Constants.m */; };
 		EA70F99C192AC88D00315D05 /* PluginManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EA70F99B192AC88D00315D05 /* PluginManager.m */; };
 		EA70F9AA192ACD5300315D05 /* ioapi.c in Sources */ = {isa = PBXBuildFile; fileRef = EA70F9A0192ACD5300315D05 /* ioapi.c */; };
@@ -51,11 +52,27 @@
 		EA86F5E4192AB55F00B834ED /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA86F5E2192AB55F00B834ED /* MainMenu.xib */; };
 		EA86F5E7192AB55F00B834ED /* Sketch_Toolbox.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EA86F5E5192AB55F00B834ED /* Sketch_Toolbox.xcdatamodeld */; };
 		EA86F5E9192AB55F00B834ED /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA86F5E8192AB55F00B834ED /* Images.xcassets */; };
+		EAA8CF521935347200F8AE07 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = EAA8CF4E19350E0400F8AE07 /* Sparkle.framework */; };
+		EAA8CF53193534BE00F8AE07 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAA8CF4E19350E0400F8AE07 /* Sparkle.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		EAA8CF511935346D00F8AE07 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				EAA8CF521935347200F8AE07 /* Sparkle.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0E5D4F24192B15560084F30C /* STPluginCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STPluginCellView.h; sourceTree = "<group>"; };
 		0E5D4F25192B15560084F30C /* STPluginCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STPluginCellView.m; sourceTree = "<group>"; };
+		EA12D97E19354808000E5232 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 		EA5913BC192D627E00FF4CC0 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 		EA5913BE192D691200FF4CC0 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		EA70F99A192AC88D00315D05 /* PluginManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PluginManager.h; sourceTree = "<group>"; };
@@ -146,6 +163,7 @@
 		EA86F5E6192AB55F00B834ED /* Sketch_Toolbox.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Sketch_Toolbox.xcdatamodel; sourceTree = "<group>"; };
 		EA86F5E8192AB55F00B834ED /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		EA86F5EF192AB55F00B834ED /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		EAA8CF4E19350E0400F8AE07 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +173,7 @@
 			files = (
 				EA70F9B0192ACEBA00315D05 /* libz.dylib in Frameworks */,
 				EA86F5CE192AB55F00B834ED /* Cocoa.framework in Frameworks */,
+				EAA8CF53193534BE00F8AE07 /* Sparkle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,6 +358,7 @@
 		EA86F5CC192AB55F00B834ED /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EAA8CF4E19350E0400F8AE07 /* Sparkle.framework */,
 				EA70F9AF192ACEBA00315D05 /* libz.dylib */,
 				EA86F5CD192AB55F00B834ED /* Cocoa.framework */,
 				EA86F5EF192AB55F00B834ED /* XCTest.framework */,
@@ -383,6 +403,7 @@
 				EA86F5D9192AB55F00B834ED /* main.m */,
 				EA86F5DB192AB55F00B834ED /* Sketch Toolbox-Prefix.pch */,
 				EA86F5DC192AB55F00B834ED /* Credits.rtf */,
+				EA12D97E19354808000E5232 /* dsa_pub.pem */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -397,6 +418,7 @@
 				EA86F5C6192AB55F00B834ED /* Sources */,
 				EA86F5C7192AB55F00B834ED /* Frameworks */,
 				EA86F5C8192AB55F00B834ED /* Resources */,
+				EAA8CF511935346D00F8AE07 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -445,6 +467,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA12D97F19354808000E5232 /* dsa_pub.pem in Resources */,
 				EA86F5D8192AB55F00B834ED /* InfoPlist.strings in Resources */,
 				EA86F5E9192AB55F00B834ED /* Images.xcassets in Resources */,
 				EA86F5DE192AB55F00B834ED /* Credits.rtf in Resources */,
@@ -605,6 +628,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sketch Toolbox/Sketch Toolbox-Prefix.pch";
 				INFOPLIST_FILE = "Sketch Toolbox/Sketch Toolbox-Info.plist";
@@ -618,6 +645,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sketch Toolbox/Sketch Toolbox-Prefix.pch";
 				INFOPLIST_FILE = "Sketch Toolbox/Sketch Toolbox-Info.plist";

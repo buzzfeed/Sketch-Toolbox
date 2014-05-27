@@ -59,6 +59,11 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadTableData) name:@"pluginStatusUpdated" object:nil];
 }
 
+-(IBAction)feedbackEmailClicked:(id)sender {
+    NSString *mailtoAddress = [[NSString stringWithFormat:@"mailto:sketch@shahr.uz?Subject=[Sketch Toolbox] Feedback on version %@",[[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]] stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:mailtoAddress]];
+}
+
 #pragma mark - Plugins Table
 
 -(void)reloadTableData {

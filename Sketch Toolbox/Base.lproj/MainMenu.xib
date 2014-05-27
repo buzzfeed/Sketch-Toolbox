@@ -185,6 +185,7 @@
                 </subviews>
             </view>
         </window>
+        <customObject id="wxL-fS-6xB" customClass="SUUpdater"/>
         <menu title="Main Menu" systemMenu="main" id="EIy-nK-C1y">
             <items>
                 <menuItem title="Sketch Toolbox" id="8TN-Gh-ty4">
@@ -195,6 +196,18 @@
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="orderFrontStandardAboutPanel:" target="-1" id="jqq-mE-mF0"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Check for updates..." id="M66-4n-jO2">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="checkForUpdates:" target="wxL-fS-6xB" id="RDj-rO-vRs"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Send feedback..." id="prn-vd-ce7">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="feedbackEmailClicked" target="Voe-Tx-rLC" id="gZO-d5-XYc"/>
                                 </connections>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="5Vv-wl-45a"/>
