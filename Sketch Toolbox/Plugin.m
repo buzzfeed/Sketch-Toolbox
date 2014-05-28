@@ -44,23 +44,15 @@
         
         NSMutableArray *downloadPaths = [@[] mutableCopy];
         
-        if ([fm fileExistsAtPath:[kSketchAppStorePluginPath stringByExpandingTildeInPath]]) {
-            NSString *outputPath = [NSString stringWithFormat:@"%@/%@", [kSketchAppStorePluginPath stringByExpandingTildeInPath], self.displayName];
-            [fm copyItemAtPath:tmpContentsPath toPath:outputPath error:nil];
-            [downloadPaths addObject:outputPath];
-        }
+        NSArray *paths = @[kSketch3AppStorePluginPath, kSketch3PluginPath, kSketch2AppStorePluginPath, kSketch2PluginPath];
         
-        if ([fm fileExistsAtPath:[kSketchBetaPluginPath stringByExpandingTildeInPath]]) {
-            NSString *outputPath = [NSString stringWithFormat:@"%@/%@", [kSketchBetaPluginPath stringByExpandingTildeInPath], self.displayName];
-            [fm copyItemAtPath:tmpContentsPath toPath:outputPath error:nil];
-            [downloadPaths addObject:outputPath];
-        }
-
-        if ([fm fileExistsAtPath:[kSketch2PluginPath stringByExpandingTildeInPath]]) {
-            NSString *outputPath = [NSString stringWithFormat:@"%@/%@", [kSketch2PluginPath stringByExpandingTildeInPath], self.displayName];
-            [fm copyItemAtPath:tmpContentsPath toPath:outputPath error:nil];
-            [downloadPaths addObject:outputPath];
-        }
+        [paths enumerateObjectsUsingBlock:^(NSString *path, NSUInteger idx, BOOL *stop) {
+            if ([fm fileExistsAtPath:[path stringByExpandingTildeInPath]]) {
+                NSString *outputPath = [NSString stringWithFormat:@"%@/%@", [path stringByExpandingTildeInPath], self.displayName];
+                [fm copyItemAtPath:tmpContentsPath toPath:outputPath error:nil];
+                [downloadPaths addObject:outputPath];
+            }
+        }];
 
         [fm removeItemAtPath:tmpContentsPath error:nil];
         

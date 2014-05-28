@@ -34,19 +34,19 @@
 
 -(NSArray *)localPlugins {
     NSFileManager *fm = [NSFileManager defaultManager];
-    NSArray *paths = @[[kSketchAppStorePluginPath stringByExpandingTildeInPath], [kSketchBetaPluginPath stringByExpandingTildeInPath]];
+    NSArray *paths = @[kSketch3AppStorePluginPath, kSketch3PluginPath, kSketch2AppStorePluginPath, kSketch2PluginPath];
     NSMutableArray *localPlugins = [@[] mutableCopy];
     
     [paths enumerateObjectsUsingBlock:^(NSString *path, NSUInteger idx, BOOL *stop) {
+        path = [path stringByExpandingTildeInPath];
         NSArray *plugins = [fm contentsOfDirectoryAtPath:path error:nil];
         [plugins enumerateObjectsUsingBlock:^(NSString *fileName, NSUInteger idx, BOOL *stop) {
             if ([[fileName substringToIndex:1] isEqualToString:@"."]) return;
             Plugin *plugin = [Plugin MR_findFirstByAttribute:@"directoryName" withValue:fileName];
             if (!plugin) {
                 [localPlugins addObject:@{@"fileName": fileName,
-                                                 @"type": ([path isEqualToString:[kSketchAppStorePluginPath stringByExpandingTildeInPath]] ? @"App Store" : @"Beta"),
-                                                 @"fileURL": [path stringByAppendingPathComponent:fileName]
-                                                 }];
+                                         @"fileURL": [path stringByAppendingPathComponent:fileName]
+                                         }];
             }
         }];
     }];
