@@ -13,6 +13,8 @@
         <customObject id="-3" userLabel="Application"/>
         <customObject id="Voe-Tx-rLC" customClass="STAppDelegate">
             <connections>
+                <outlet property="filterControl" destination="D5M-im-bV3" id="MvD-I4-s2p"/>
+                <outlet property="searchField" destination="yLx-tt-8tM" id="hVs-au-PVU"/>
                 <outlet property="tableView" destination="tll-qL-Al8" id="cSX-Sr-v5d"/>
                 <outlet property="window" destination="QvC-M9-y7g" id="gIp-Ho-8D9"/>
             </connections>

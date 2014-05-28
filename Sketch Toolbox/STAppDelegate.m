@@ -67,9 +67,16 @@
 #pragma mark - Plugins Table
 
 -(void)reloadTableData {
-    if (activePlugins == plugins) {
+    if (self.searchField.stringValue.length) {
+        [self filterPlugins:self.searchField];
+        return;
+    }
+    if (self.filterControl.selectedSegment == 0) {
         plugins = [Plugin MR_findAllSortedBy:@"name" ascending:YES];
         activePlugins = plugins;
+    } else if (self.filterControl.selectedSegment == 1) {
+        NSPredicate *installed = [NSPredicate predicateWithFormat:@"installed != nil"];
+        activePlugins = [Plugin MR_findAllSortedBy:@"name" ascending:YES withPredicate:installed];
     }
     [self.tableView reloadData];
 }
@@ -92,20 +99,26 @@
 	if ([searchText length] != 0) [searchText replaceOccurrencesOfString:@" " withString:@"" options:0 range:NSMakeRange(0,1)];
 	if ([searchText length] != 0) [searchText replaceOccurrencesOfString:@" " withString:@"" options:0 range:NSMakeRange([searchText length]-1, 1)];
 	if ([searchText length] == 0) {
-		activePlugins = plugins;
-        [self.tableView reloadData];        
+        [self segmentSelected:self.filterControl];
 		return;
 	}
 	NSArray *searchTerms = [searchText componentsSeparatedByString:@" "];
 	if ([searchTerms count] == 1) {
-		NSPredicate *p = [NSPredicate predicateWithFormat:@"(name contains[cd] %@) OR (desc contains[cd] %@) OR (owner contains[cd] %@)", searchText, searchText, searchText];
-		activePlugins = [Plugin MR_findAllWithPredicate:p];
+        NSPredicate *p = [NSPredicate predicateWithFormat:@"(name contains[cd] %@) OR (desc contains[cd] %@) OR (owner contains[cd] %@)", searchText, searchText, searchText];
+        NSMutableArray *predicates = [@[p] mutableCopy];
+        if (self.filterControl.selectedSegment == 1) {
+            [predicates addObject:[NSPredicate predicateWithFormat:@"installed != nil"]];
+        }
+		activePlugins = [Plugin MR_findAllWithPredicate:[NSCompoundPredicate andPredicateWithSubpredicates:predicates]];
 	} else {
 		NSMutableArray *subPredicates = [[NSMutableArray alloc] init];
 		for (NSString *term in searchTerms) {
 			NSPredicate *p = [NSPredicate predicateWithFormat:@"(name contains[cd] %@) OR (desc contains[cd] %@) OR (owner contains[cd] %@)", term, term, term];
 			[subPredicates addObject:p];
 		}
+        if (self.filterControl.selectedSegment == 1) {
+            [subPredicates addObject:[NSPredicate predicateWithFormat:@"installed != nil"]];
+        }
 		NSPredicate *cp = [NSCompoundPredicate andPredicateWithSubpredicates:subPredicates];
 		activePlugins = [Plugin MR_findAllWithPredicate:cp];
 	}
