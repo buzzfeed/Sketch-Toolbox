@@ -32,7 +32,6 @@
     [self startApp];
     pluginManager = [PluginManager sharedManager];
     [pluginManager downloadCatalog];
-    NSLog(@"Local: %@", [pluginManager localPlugins]);
 }
 
 -(void)migrate {
