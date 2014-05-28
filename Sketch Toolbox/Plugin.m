@@ -55,7 +55,13 @@
             [fm copyItemAtPath:tmpContentsPath toPath:outputPath error:nil];
             [downloadPaths addObject:outputPath];
         }
-        
+
+        if ([fm fileExistsAtPath:[kSketch2PluginPath stringByExpandingTildeInPath]]) {
+            NSString *outputPath = [NSString stringWithFormat:@"%@/%@", [kSketch2PluginPath stringByExpandingTildeInPath], self.displayName];
+            [fm copyItemAtPath:tmpContentsPath toPath:outputPath error:nil];
+            [downloadPaths addObject:outputPath];
+        }
+
         [fm removeItemAtPath:tmpContentsPath error:nil];
         
         NSLog(@"Finished downloading %@", self.name);
