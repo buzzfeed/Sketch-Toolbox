@@ -13,7 +13,7 @@
 
 @property (nonatomic, strong) Plugin *plugin;
 
-@property (nonatomic, strong) IBOutlet NSTextField *name;
+@property (nonatomic, strong) IBOutlet NSButton *nameButton;
 @property (nonatomic, strong) IBOutlet NSTextField *description;
 @property (nonatomic, strong) IBOutlet NSTextField *owner;
 @property (nonatomic, strong) IBOutlet NSTextField *starCount;
@@ -21,6 +21,7 @@
 
 -(IBAction)actionButtonPressed:(id)sender;
 -(IBAction)infoButtonPressed:(id)sender;
+-(IBAction)nameButtonPressed:(id)sender;
 
 -(void)populate;
 

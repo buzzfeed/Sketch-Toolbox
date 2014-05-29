@@ -20,11 +20,15 @@
 }
 
 -(void)infoButtonPressed:(id)sender {
-    [[NSWorkspace sharedWorkspace] openURL:self.plugin.repoURL];
+    [self openGitHubURL];
+}
+
+- (void)nameButtonPressed:(id)sender {
+    [self openGitHubURL];
 }
 
 -(void)populate {
-    self.name.stringValue = self.plugin.displayName;
+    self.nameButton.title = self.plugin.displayName;
     self.description.stringValue = self.plugin.desc;
     self.owner.stringValue = self.plugin.owner;
     self.starCount.stringValue = [NSString stringWithFormat:@"%i", self.plugin.stars];
@@ -35,6 +39,11 @@
     } else {
         [self.actionButton setTitle:@"Install"];
     }
+}
+
+- (void)openGitHubURL
+{
+    [[NSWorkspace sharedWorkspace] openURL:self.plugin.repoURL];
 }
 
 @end
