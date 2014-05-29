@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="5056" systemVersion="13C64" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="5056"/>
     </dependencies>
@@ -25,6 +25,7 @@
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="335" y="390" width="500" height="488"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1200"/>
+            <value key="minSize" type="size" width="450" height="300"/>
             <view key="contentView" id="EiT-Mj-1SZ">
                 <rect key="frame" x="0.0" y="0.0" width="500" height="488"/>
                 <autoresizingMask key="autoresizingMask"/>
@@ -41,7 +42,8 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <size key="intercellSpacing" width="3" height="2"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
+                                    <tableViewGridLines key="gridStyleMask" horizontal="YES"/>
+                                    <color key="gridColor" red="0.92156862745098034" green="0.92156862745098034" blue="0.92156862745098034" alpha="1" colorSpace="calibratedRGB"/>
                                     <tableColumns>
                                         <tableColumn editable="NO" width="497" minWidth="40" maxWidth="1000" id="Kma-mf-RaI">
                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left">
@@ -60,15 +62,17 @@
                                                     <rect key="frame" x="1" y="1" width="497" height="107"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
-                                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" id="4Sc-HC-EKv">
-                                                            <rect key="frame" x="10" y="75" width="347" height="23"/>
-                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                                            <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Name" id="hYg-uF-51G">
+                                                        <button id="eer-mL-zrp" userLabel="Button (TextField) - Name">
+                                                            <rect key="frame" x="10" y="79" width="345" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                            <buttonCell key="cell" type="bevel" title="Name" bezelStyle="rounded" alignment="left" imageScaling="proportionallyDown" inset="2" id="CZf-eR-jVZ">
+                                                                <behavior key="behavior" lightByContents="YES"/>
                                                                 <font key="font" metaFont="systemBold"/>
-                                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                                            </textFieldCell>
-                                                        </textField>
+                                                            </buttonCell>
+                                                            <connections>
+                                                                <action selector="nameButtonPressed:" target="C1z-dv-ClF" id="Q0T-fU-SBV"/>
+                                                            </connections>
+                                                        </button>
                                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" id="MIW-Rl-YRt">
                                                             <rect key="frame" x="35" y="8" width="78" height="14"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -137,7 +141,7 @@
                                                     <connections>
                                                         <outlet property="actionButton" destination="WhX-jB-rVM" id="KQx-1Y-AYa"/>
                                                         <outlet property="description" destination="E2A-WJ-dae" id="sx2-ox-sPC"/>
-                                                        <outlet property="name" destination="4Sc-HC-EKv" id="565-96-Iyr"/>
+                                                        <outlet property="nameButton" destination="eer-mL-zrp" id="AEl-R8-hIm"/>
                                                         <outlet property="owner" destination="MIW-Rl-YRt" id="cwh-yZ-epK"/>
                                                         <outlet property="starCount" destination="moX-uJ-fdK" id="j7t-jV-7Sd"/>
                                                     </connections>
