@@ -74,7 +74,7 @@
                                                             </connections>
                                                         </button>
                                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" id="MIW-Rl-YRt">
-                                                            <rect key="frame" x="85" y="8" width="78" height="24"/>
+                                                            <rect key="frame" x="99" y="8" width="78" height="24"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                             <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Name" id="r2X-Kf-zhM">
                                                                 <font key="font" size="13" name="LucidaGrande-Bold"/>
@@ -83,7 +83,7 @@
                                                             </textFieldCell>
                                                         </textField>
                                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" id="moX-uJ-fdK">
-                                                            <rect key="frame" x="29" y="8" width="36" height="24"/>
+                                                            <rect key="frame" x="29" y="8" width="45" height="24"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                             <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="0" id="xBq-Xc-AWM">
                                                                 <font key="font" size="13" name="LucidaGrande-Bold"/>
@@ -101,7 +101,7 @@
                                                             </textFieldCell>
                                                         </textField>
                                                         <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="t0z-De-VpJ">
-                                                            <rect key="frame" x="61" y="14" width="22" height="16"/>
+                                                            <rect key="frame" x="75" y="14" width="22" height="16"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                             <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="User" id="Hgi-e6-x0v"/>
                                                         </imageView>
@@ -113,7 +113,7 @@
                                                         <button verticalHuggingPriority="750" id="9HP-Xd-tM3">
                                                             <rect key="frame" x="383" y="63" width="86" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
-                                                            <buttonCell key="cell" type="roundRect" title="View on Github" bezelStyle="roundedRect" image="D62C2125-9144-471C-9126-31318B332DF6" imagePosition="overlaps" controlSize="small" state="on" inset="2" id="d2E-9a-pEH">
+                                                            <buttonCell key="cell" type="roundRect" title="View on Github" bezelStyle="roundedRect" image="CF3570E3-5E5A-46FF-B71E-7A086362599F" imagePosition="overlaps" controlSize="small" state="on" inset="2" id="d2E-9a-pEH">
                                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                                 <font key="font" metaFont="smallSystem"/>
                                                             </buttonCell>
@@ -311,7 +311,7 @@
         </menu>
     </objects>
     <resources>
-        <image name="D62C2125-9144-471C-9126-31318B332DF6" width="1" height="1">
+        <image name="CF3570E3-5E5A-46FF-B71E-7A086362599F" width="1" height="1">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPj9YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQsLzI4O1UkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -362,7 +362,7 @@ qgmvCbcJugm/Cc4J0gnZCeEJ7gnzCfUJ9wn8CgQKBwoMChQKFwopCiwKMQAAAAAAAAIBAAAAAAAAAEIA
 AAAAAAAAAAAAAAAAAAozA
 </mutableData>
         </image>
-        <image name="Star" width="16" height="15"/>
-        <image name="User" width="25" height="31"/>
+        <image name="Star" width="32" height="30"/>
+        <image name="User" width="16" height="16"/>
     </resources>
 </document>
