@@ -65,6 +65,10 @@ section#description h4.future {
 	margin-top: 50px;
 }
 
+section#description a {
+	color: #575757;
+}
+
 section#description .desc-item {
 	margin: 23px 0px;
 	font-size: 17px;
