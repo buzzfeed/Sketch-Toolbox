@@ -41,8 +41,7 @@
     }
 }
 
-- (void)openGitHubURL
-{
+- (void)openGitHubURL {
     [[NSWorkspace sharedWorkspace] openURL:self.plugin.repoURL];
 }
 
