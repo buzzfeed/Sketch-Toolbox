@@ -4,7 +4,7 @@ A super simple plugin manager for Sketch.app.
 
 If you just want to download and use the latest stable version of the app, visit [sketchtoolbox.com](http://sketchtoolbox.com).
 
-If you want to run the latest (potentially unstable) code, opening this project, and clicking the Run button in the upper left corner. If you run into any problems, or have any kind of feedback or suggestions, please create a GitHub issue.
+If you want to run the latest (potentially unstable) code, you can do so by opening this project, and clicking the Run button in the upper left corner. If you run into any problems, or have any kind of feedback or suggestions, please create a GitHub issue.
 
 Current priorities are to add in some more basic functionality and getting the UI to look a lot nicer.
 
