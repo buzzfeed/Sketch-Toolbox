@@ -1,16 +1,17 @@
 ![Header](https://i.cloudup.com/XTLlL1-Stt-3000x3000.png)
 
-A __very basic__ prototype of a package manager for Sketch.app.
+A super simple plugin manager for Sketch.app.
 
-Over the next few days, I'll be doing a lot of polishing of the interface and experience, as well as refactoring the code. There's a ton of room for improvement. I aim to have a solid beta launched by May 26th, along with a download site for the app so that you don't have to compile it on your own.
+If you just want to download and use the latest stable version of the app, visit [sketchtoolbox.com](http://sketchtoolbox.com).
 
-In the meantime, you can run this version by opening in Xcode, and clicking the Run button in the upper left corner. If you run into any problems, or have any kind of feedback or suggestions, please create a GitHub issue.
+If you want to run the latest (potentially unstable) code, opening this project, and clicking the Run button in the upper left corner. If you run into any problems, or have any kind of feedback or suggestions, please create a GitHub issue.
 
-Please feel free to get involved if you're interested! You can email me at me @ shahr.uz or find me on [Twitter](http://twitter.com/shahruz).
+Current priorities are to add in some more basic functionality and getting the UI to look a lot nicer.
 
-![Screenshot of 0.0.3](https://i.cloudup.com/oAmTTNfpl0-3000x3000.png)
+Please feel free to get involved if you're interested. You can email me at me @ shahr.uz or find me on [Twitter](http://twitter.com/shahruz).
 
 Special thanks to:
 * [Clark Wimberly](http://twitter.com/clarklab)
 * [Ale Munoz](http://github.com/sketchplugins)
+* [Timur Carpeev](http://github.com/timuric)
 * [The Bohemian Coding Team](https://twitter.com/bohemiancoding)

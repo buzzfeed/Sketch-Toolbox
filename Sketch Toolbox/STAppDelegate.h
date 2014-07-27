@@ -28,5 +28,6 @@
 - (NSString *)applicationFilesDirectory;
 
 @property (nonatomic, strong) IBOutlet NSTableView *tableView;
+@property (nonatomic, strong) IBOutlet NSButton *refreshButton;
 
 @end

@@ -55,6 +55,7 @@
     activePlugins = plugins;
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    self.refreshButton.toolTip = @"Check for updates";
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadTableData) name:@"pluginStatusUpdated" object:nil];
 }
 
@@ -138,6 +139,10 @@
 
 - (BOOL)selectionShouldChangeInTableView:(NSTableView *)tableView {
     return NO;
+}
+
+-(IBAction)checkForUpdates:(id)sender {
+    [pluginManager downloadCatalog];
 }
 
 #pragma mark - Core Data

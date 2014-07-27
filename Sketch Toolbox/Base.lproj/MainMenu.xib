@@ -14,6 +14,7 @@
         <customObject id="Voe-Tx-rLC" customClass="STAppDelegate">
             <connections>
                 <outlet property="filterControl" destination="D5M-im-bV3" id="MvD-I4-s2p"/>
+                <outlet property="refreshButton" destination="zDk-zV-Plv" id="12C-ZR-B1S"/>
                 <outlet property="searchField" destination="yLx-tt-8tM" id="hVs-au-PVU"/>
                 <outlet property="tableView" destination="tll-qL-Al8" id="cSX-Sr-v5d"/>
                 <outlet property="window" destination="QvC-M9-y7g" id="gIp-Ho-8D9"/>
@@ -113,7 +114,7 @@
                                                         <button verticalHuggingPriority="750" id="9HP-Xd-tM3">
                                                             <rect key="frame" x="383" y="63" width="86" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
-                                                            <buttonCell key="cell" type="roundRect" title="View on Github" bezelStyle="roundedRect" image="23B40406-C6FF-4684-8789-95264B4A2E9B" imagePosition="overlaps" controlSize="small" state="on" inset="2" id="d2E-9a-pEH">
+                                                            <buttonCell key="cell" type="roundRect" title="View on Github" bezelStyle="roundedRect" image="955221BE-E292-4F5C-AC4E-F02B016A333D" imagePosition="overlaps" controlSize="small" state="on" inset="2" id="d2E-9a-pEH">
                                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                                 <font key="font" metaFont="smallSystem"/>
                                                             </buttonCell>
@@ -170,7 +171,7 @@
                         </connections>
                     </searchField>
                     <segmentedControl focusRingType="none" verticalHuggingPriority="750" id="D5M-im-bV3">
-                        <rect key="frame" x="7" y="453" width="132" height="25"/>
+                        <rect key="frame" x="41" y="453" width="132" height="25"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <segmentedCell key="cell" borderStyle="border" focusRingType="none" alignment="left" style="automatic" trackingMode="selectOne" id="slY-aY-0t8">
                             <font key="font" metaFont="system"/>
@@ -183,6 +184,19 @@
                             <action selector="segmentSelected:" target="Voe-Tx-rLC" id="PW8-Qz-La1"/>
                         </connections>
                     </segmentedControl>
+                    <button verticalHuggingPriority="750" id="zDk-zV-Plv">
+                        <rect key="frame" x="8" y="453" width="25" height="25"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="Refresh" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyUpOrDown" inset="2" id="cRd-ay-rKP">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                            <string key="keyEquivalent">r</string>
+                            <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="checkForUpdates:" target="Voe-Tx-rLC" id="quy-ED-cDE"/>
+                        </connections>
+                    </button>
                 </subviews>
             </view>
         </window>
@@ -309,9 +323,10 @@
                 </menuItem>
             </items>
         </menu>
+        <userDefaultsController representsSharedInstance="YES" id="Isw-dd-hxY"/>
     </objects>
     <resources>
-        <image name="23B40406-C6FF-4684-8789-95264B4A2E9B" width="1" height="1">
+        <image name="955221BE-E292-4F5C-AC4E-F02B016A333D" width="1" height="1">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPj9YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQsLzI4O1UkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -362,6 +377,7 @@ qgmvCbcJugm/Cc4J0gnZCeEJ7gnzCfUJ9wn8CgQKBwoMChQKFwopCiwKMQAAAAAAAAIBAAAAAAAAAEIA
 AAAAAAAAAAAAAAAAAAozA
 </mutableData>
         </image>
+        <image name="Refresh" width="15" height="14"/>
         <image name="Star" width="32" height="30"/>
         <image name="User" width="16" height="16"/>
     </resources>

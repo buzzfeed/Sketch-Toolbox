@@ -72,8 +72,7 @@
 
     plugin.desc = dictionary[@"description"];
     
-    // We don't need to redownload remote data if the app is uninstalled and was checked in the past 24 hours
-    if (plugin.isInstalled || ([plugin.lastModified compare:[NSDate dateWithTimeIntervalSinceNow:-86400.0]] == NSOrderedAscending)) {
+    if (plugin.isInstalled) {
     
         NSLog(@"Getting latest info for %@", plugin.name);
         
