@@ -1,0 +1,158 @@
+*, *:before, *:after { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+body {
+	font-family: 'Circular', sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+header {
+	background: #71CBEA;
+	height: 320px;
+	width: 100vw;
+	padding: 92px 80px;
+}
+
+header h1 {
+	font-weight: bold;
+	font-size: 64px;
+	color: white;
+}
+
+header h2 {
+	font-weight: normal;
+	font-size: 18px;
+	color: white;
+	margin-left: 15px;
+	margin-top: 2px;
+	letter-spacing: 0.1px;
+}
+
+header .links {
+	margin-top: 30px;
+	margin-left: 8px;	
+}
+
+header .links .github {
+	text-decoration: none;
+	color: white;
+	margin-left: 10px;
+	font-size: 14px;
+}
+
+header .logo {
+	position: absolute;
+	top: -20px;
+	right: 9px;
+}
+
+section {
+	width: 100vw;
+}
+
+section#description {
+	background: #DBF6FB;
+	height: 460px;
+	padding: 47px;
+}
+
+section#description h4 {
+    font-weight: bold;
+    color: #71CBEA;
+    font-size: 20px;	
+}
+
+section#description h4.future {
+	margin-top: 50px;
+}
+
+section#description .desc-item {
+	margin: 23px 0px;
+	font-size: 17px;
+	letter-spacing: .7px;
+	color: #575757;
+}
+
+section#description .desc-item .num {
+	color: #F26156;
+	margin-right: 12px;	
+}
+
+section#screenshot {
+	background: #FFF;
+	height: 800px;
+    padding: 64px;
+    text-align: center;
+}
+
+section#screenshot h3 {
+    color: #71CBEA;
+    font-weight: bold;
+    font-size: 26px;
+}
+
+section#screenshot h5 {
+    color: #F26156;
+    margin-top: 13px;
+    font-size: 20px;
+}
+
+section#screenshot .screenshot {
+	margin-top: 42px;
+}
+
+section#download {
+	background: #DBF6FB;
+	height: 100px;
+	text-align: center;
+	padding: 32px;
+}
+
+footer {
+	background: #71CBEA;
+	height: 120px;
+	width: 100vw;
+	text-align: center;
+	color: white;
+	font-size: 14px;
+	padding: 24px;
+	line-height: 26px;
+}
+
+footer a {
+	color: white;
+	text-decoration: none;
+}
+
+.content {
+	width: 800px;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+}
+
+.button {
+	background: #F26156;
+	border-radius: 5px;
+	color: #FFF;
+	text-align: center;
+	padding: 13px 21px;
+	display: inline-block;
+	text-decoration: none;
+	font-size: 18px;
+}
+
+@font-face {
+	font-family: 'Circular';
+	src: url('fonts/CircularStd-Book.eot');
+	src: url('fonts/CircularStd-Book.woff') format('woff'), url('fonts/CircularStd-Book.ttf') format('truetype'), url('fonts/CircularStd-Book.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Circular';
+	src: url('fonts/CircularStd-Bold.eot');
+	src: url('fonts/CircularStd-Bold.woff') format('woff'), url('fonts/CircularStd-Bold.ttf') format('truetype'), url('fonts/CircularStd-Bold.svg') format('svg');
+	font-weight: bold;
+	font-style: normal;
+}
