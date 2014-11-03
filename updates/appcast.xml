@@ -13,7 +13,7 @@
 	     ]]>
 		 </description>
 	     <enclosure url="http://sketchtoolbox.com/Sketch%20Toolbox.zip"
-	                sparkle:version="0.5.1"
+	                sparkle:version="051"
 	                sparkle:dsaSignature="MCwCFHcKoWwtZ2ibiHfD4l0WcUzPrDzgAhRNGjONg86/SARtNMe/w3FiGKrQDg==="
 	                type="application/octet-stream" />
 	 </item>
