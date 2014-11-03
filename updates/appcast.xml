@@ -8,6 +8,10 @@
 	  <item>
 	     <title>Version 0.5.1</title>
 	     <pubDate>Mon, 03 Nov 2014 15:39:36 +0000</pubDate>
+	     <description><![CDATA[
+	         Added support for Sketch 3 Beta.
+	     ]]>
+		 </description>
 	     <enclosure url="http://sketchtoolbox.com/Sketch%20Toolbox.zip"
 	                sparkle:version="0.5.1"
 	                sparkle:dsaSignature="MCwCFHcKoWwtZ2ibiHfD4l0WcUzPrDzgAhRNGjONg86/SARtNMe/w3FiGKrQDg==="
