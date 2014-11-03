@@ -34,7 +34,7 @@
 
 -(NSArray *)localPlugins {
     NSFileManager *fm = [NSFileManager defaultManager];
-    NSArray *paths = @[kSketch3AppStorePluginPath, kSketch3PluginPath, kSketch2AppStorePluginPath, kSketch2PluginPath];
+    NSArray *paths = @[kSketch3AppStorePluginPath, kSketch3PluginPath, kSketch3BetaPluginPath,kSketch2AppStorePluginPath, kSketch2PluginPath];
     NSMutableArray *localPlugins = [@[] mutableCopy];
     
     [paths enumerateObjectsUsingBlock:^(NSString *path, NSUInteger idx, BOOL *stop) {

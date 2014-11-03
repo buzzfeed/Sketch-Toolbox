@@ -44,12 +44,13 @@
         
         NSMutableArray *downloadPaths = [@[] mutableCopy];
         
-        NSArray *paths = @[kSketch3AppStorePluginPath, kSketch3PluginPath, kSketch2AppStorePluginPath, kSketch2PluginPath];
+        NSArray *paths = @[kSketch3AppStorePluginPath, kSketch3PluginPath, kSketch3BetaPluginPath, kSketch2AppStorePluginPath, kSketch2PluginPath];
         
         [paths enumerateObjectsUsingBlock:^(NSString *path, NSUInteger idx, BOOL *stop) {
             if ([fm fileExistsAtPath:[path stringByExpandingTildeInPath]]) {
                 NSString *outputPath = [NSString stringWithFormat:@"%@/%@", [path stringByExpandingTildeInPath], self.displayName];
                 [fm copyItemAtPath:tmpContentsPath toPath:outputPath error:nil];
+                NSLog(@"Copied to %@", outputPath);
                 [downloadPaths addObject:outputPath];
             }
         }];

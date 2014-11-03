@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="5056"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6250"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -10,7 +11,7 @@
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
-        <customObject id="-3" userLabel="Application"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customObject id="Voe-Tx-rLC" customClass="STAppDelegate">
             <connections>
                 <outlet property="filterControl" destination="D5M-im-bV3" id="MvD-I4-s2p"/>
@@ -39,7 +40,6 @@
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" alternatingRowBackgroundColors="YES" columnReordering="NO" columnResizing="NO" multipleSelection="NO" emptySelection="NO" autosaveColumns="NO" typeSelect="NO" rowHeight="107" rowSizeStyle="automatic" viewBased="YES" id="tll-qL-Al8">
-                                    <rect key="frame" x="0.0" y="0.0" width="500" height="436"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <size key="intercellSpacing" width="3" height="2"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -78,7 +78,7 @@
                                                             <rect key="frame" x="99" y="8" width="253" height="24"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                             <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Name" id="r2X-Kf-zhM">
-                                                                <font key="font" size="13" name="LucidaGrande-Bold"/>
+                                                                <font key="font" metaFont="systemBold"/>
                                                                 <color key="textColor" red="0.35071331519999999" green="0.35071331519999999" blue="0.35071331519999999" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                             </textFieldCell>
@@ -87,7 +87,7 @@
                                                             <rect key="frame" x="29" y="8" width="45" height="24"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                             <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="0" id="xBq-Xc-AWM">
-                                                                <font key="font" size="13" name="LucidaGrande-Bold"/>
+                                                                <font key="font" metaFont="systemBold"/>
                                                                 <color key="textColor" red="0.35071331521739135" green="0.35071331521739135" blue="0.35071331521739135" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                             </textFieldCell>
@@ -114,7 +114,7 @@
                                                         <button verticalHuggingPriority="750" id="9HP-Xd-tM3">
                                                             <rect key="frame" x="383" y="63" width="86" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
-                                                            <buttonCell key="cell" type="roundRect" title="View on Github" bezelStyle="roundedRect" image="955221BE-E292-4F5C-AC4E-F02B016A333D" imagePosition="overlaps" controlSize="small" state="on" inset="2" id="d2E-9a-pEH">
+                                                            <buttonCell key="cell" type="roundRect" title="View on Github" bezelStyle="roundedRect" image="896AC610-C7BE-4D8C-BCA9-6CA1A6DB746F" imagePosition="overlaps" controlSize="small" state="on" inset="2" id="d2E-9a-pEH">
                                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                                 <font key="font" metaFont="smallSystem"/>
                                                             </buttonCell>
@@ -136,7 +136,7 @@
                                                     </subviews>
                                                     <connections>
                                                         <outlet property="actionButton" destination="WhX-jB-rVM" id="KQx-1Y-AYa"/>
-                                                        <outlet property="description" destination="E2A-WJ-dae" id="sx2-ox-sPC"/>
+                                                        <outlet property="descriptionField" destination="E2A-WJ-dae" id="tDG-dd-iMV"/>
                                                         <outlet property="nameButton" destination="eer-mL-zrp" id="AEl-R8-hIm"/>
                                                         <outlet property="owner" destination="MIW-Rl-YRt" id="cwh-yZ-epK"/>
                                                         <outlet property="starCount" destination="moX-uJ-fdK" id="j7t-jV-7Sd"/>
@@ -158,7 +158,7 @@
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                     </scrollView>
-                    <searchField verticalHuggingPriority="750" id="yLx-tt-8tM">
+                    <searchField wantsLayer="YES" verticalHuggingPriority="750" id="yLx-tt-8tM">
                         <rect key="frame" x="302" y="455" width="189" height="22"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                         <searchFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" usesSingleLineMode="YES" bezelStyle="round" id="bgK-GS-Rpy">
@@ -326,7 +326,7 @@
         <userDefaultsController representsSharedInstance="YES" id="Isw-dd-hxY"/>
     </objects>
     <resources>
-        <image name="955221BE-E292-4F5C-AC4E-F02B016A333D" width="1" height="1">
+        <image name="896AC610-C7BE-4D8C-BCA9-6CA1A6DB746F" width="1" height="1">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPj9YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQsLzI4O1UkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw

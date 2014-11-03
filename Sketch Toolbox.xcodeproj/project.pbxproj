@@ -52,7 +52,7 @@
 		EA86F5E4192AB55F00B834ED /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA86F5E2192AB55F00B834ED /* MainMenu.xib */; };
 		EA86F5E7192AB55F00B834ED /* Sketch_Toolbox.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EA86F5E5192AB55F00B834ED /* Sketch_Toolbox.xcdatamodeld */; };
 		EA86F5E9192AB55F00B834ED /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA86F5E8192AB55F00B834ED /* Images.xcassets */; };
-		EAA8CF521935347200F8AE07 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = EAA8CF4E19350E0400F8AE07 /* Sparkle.framework */; };
+		EAA8CF521935347200F8AE07 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = EAA8CF4E19350E0400F8AE07 /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		EAA8CF53193534BE00F8AE07 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAA8CF4E19350E0400F8AE07 /* Sparkle.framework */; };
 /* End PBXBuildFile section */
 
@@ -436,7 +436,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = ST;
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = "Shahruz Shaukat";
 				TargetAttributes = {
 					EA86F5C9192AB55F00B834ED = {
