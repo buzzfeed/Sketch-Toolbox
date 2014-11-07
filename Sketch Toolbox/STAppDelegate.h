@@ -7,8 +7,9 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "EDSideBar.h"
 
-@interface STAppDelegate : NSObject <NSApplicationDelegate, NSTableViewDataSource, NSTableViewDelegate>
+@interface STAppDelegate : NSObject <NSApplicationDelegate, NSTableViewDataSource, NSTableViewDelegate, EDSideBarDelegate>
 
 @property (assign) IBOutlet NSWindow *window;
 @property (nonatomic, strong) IBOutlet NSSegmentedControl *filterControl;
@@ -29,5 +30,7 @@
 
 @property (nonatomic, strong) IBOutlet NSTableView *tableView;
 @property (nonatomic, strong) IBOutlet NSButton *refreshButton;
+
+@property (nonatomic, strong) IBOutlet EDSideBar *sidebarView;
 
 @end

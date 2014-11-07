@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0E5D4F26192B15560084F30C /* STPluginCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E5D4F25192B15560084F30C /* STPluginCellView.m */; };
+		EA1100061A0C0D47000EC8C4 /* Template.m in Sources */ = {isa = PBXBuildFile; fileRef = EA1100051A0C0D47000EC8C4 /* Template.m */; };
+		EA1100091A0C12D6000EC8C4 /* TemplateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EA1100081A0C12D6000EC8C4 /* TemplateManager.m */; };
+		EA11000D1A0C2267000EC8C4 /* EDSideBar.m in Sources */ = {isa = PBXBuildFile; fileRef = EA11000C1A0C2267000EC8C4 /* EDSideBar.m */; };
 		EA12D97F19354808000E5232 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = EA12D97E19354808000E5232 /* dsa_pub.pem */; };
 		EA5913BD192D627E00FF4CC0 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = EA5913BC192D627E00FF4CC0 /* Constants.m */; };
 		EA70F99C192AC88D00315D05 /* PluginManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EA70F99B192AC88D00315D05 /* PluginManager.m */; };
@@ -72,6 +75,12 @@
 /* Begin PBXFileReference section */
 		0E5D4F24192B15560084F30C /* STPluginCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STPluginCellView.h; sourceTree = "<group>"; };
 		0E5D4F25192B15560084F30C /* STPluginCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STPluginCellView.m; sourceTree = "<group>"; };
+		EA1100041A0C0D47000EC8C4 /* Template.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Template.h; sourceTree = "<group>"; };
+		EA1100051A0C0D47000EC8C4 /* Template.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Template.m; sourceTree = "<group>"; };
+		EA1100071A0C12D6000EC8C4 /* TemplateManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TemplateManager.h; sourceTree = "<group>"; };
+		EA1100081A0C12D6000EC8C4 /* TemplateManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TemplateManager.m; sourceTree = "<group>"; };
+		EA11000B1A0C2267000EC8C4 /* EDSideBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDSideBar.h; sourceTree = "<group>"; };
+		EA11000C1A0C2267000EC8C4 /* EDSideBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDSideBar.m; sourceTree = "<group>"; };
 		EA12D97E19354808000E5232 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 		EA5913BC192D627E00FF4CC0 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 		EA5913BE192D691200FF4CC0 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
@@ -190,11 +199,22 @@
 			name = Views;
 			sourceTree = "<group>";
 		};
+		EA11000A1A0C2267000EC8C4 /* EDSideBar */ = {
+			isa = PBXGroup;
+			children = (
+				EA11000B1A0C2267000EC8C4 /* EDSideBar.h */,
+				EA11000C1A0C2267000EC8C4 /* EDSideBar.m */,
+			);
+			path = EDSideBar;
+			sourceTree = "<group>";
+		};
 		EA5913BA192D4B2D00FF4CC0 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
 				EA70F99A192AC88D00315D05 /* PluginManager.h */,
 				EA70F99B192AC88D00315D05 /* PluginManager.m */,
+				EA1100071A0C12D6000EC8C4 /* TemplateManager.h */,
+				EA1100081A0C12D6000EC8C4 /* TemplateManager.m */,
 			);
 			name = Managers;
 			sourceTree = "<group>";
@@ -231,6 +251,8 @@
 				EA86F5E5192AB55F00B834ED /* Sketch_Toolbox.xcdatamodeld */,
 				EA75D438192AC268005CF0DF /* Plugin.h */,
 				EA75D439192AC268005CF0DF /* Plugin.m */,
+				EA1100041A0C0D47000EC8C4 /* Template.h */,
+				EA1100051A0C0D47000EC8C4 /* Template.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -396,6 +418,7 @@
 		EA86F5D4192AB55F00B834ED /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				EA11000A1A0C2267000EC8C4 /* EDSideBar */,
 				EA75D43C192AC4C4005CF0DF /* MagicalRecord */,
 				EA70F99D192ACD5300315D05 /* SSZipArchive */,
 				EA86F5D5192AB55F00B834ED /* Sketch Toolbox-Info.plist */,
@@ -485,6 +508,7 @@
 				EA75D484192AC4C4005CF0DF /* NSManagedObject+MagicalRecord.m in Sources */,
 				EA75D493192AC4C4005CF0DF /* MagicalRecord.m in Sources */,
 				EA75D47B192AC4C4005CF0DF /* NSAttributeDescription+MagicalDataImport.m in Sources */,
+				EA1100091A0C12D6000EC8C4 /* TemplateManager.m in Sources */,
 				EA70F99C192AC88D00315D05 /* PluginManager.m in Sources */,
 				EA75D485192AC4C4005CF0DF /* NSManagedObject+MagicalRequests.m in Sources */,
 				EA70F9AB192ACD5300315D05 /* mztools.c in Sources */,
@@ -496,8 +520,10 @@
 				EA75D47C192AC4C4005CF0DF /* NSEntityDescription+MagicalDataImport.m in Sources */,
 				EA70F9AA192ACD5300315D05 /* ioapi.c in Sources */,
 				EA86F5E7192AB55F00B834ED /* Sketch_Toolbox.xcdatamodeld in Sources */,
+				EA11000D1A0C2267000EC8C4 /* EDSideBar.m in Sources */,
 				EA75D48C192AC4C4005CF0DF /* NSPersistentStoreCoordinator+MagicalRecord.m in Sources */,
 				EA75D48A192AC4C4005CF0DF /* NSManagedObjectModel+MagicalRecord.m in Sources */,
+				EA1100061A0C0D47000EC8C4 /* Template.m in Sources */,
 				EA86F5DA192AB55F00B834ED /* main.m in Sources */,
 				EA75D48B192AC4C4005CF0DF /* NSPersistentStore+MagicalRecord.m in Sources */,
 				EA75D48F192AC4C4005CF0DF /* MagicalRecord+iCloud.m in Sources */,
