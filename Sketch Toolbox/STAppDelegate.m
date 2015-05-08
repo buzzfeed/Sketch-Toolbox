@@ -10,6 +10,7 @@
 #import "PluginManager.h"
 #import "Plugin.h"
 #import "STPluginCellView.h"
+#import "Constants.h"
 
 @interface STAppDelegate() {
     PluginManager *pluginManager;
@@ -64,6 +65,21 @@
     [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:mailtoAddress]];
 }
 
+- (IBAction)exportPlugin:(id)sender {
+    NSFileManager *fm = [NSFileManager defaultManager];
+    NSArray *paths = @[kSketch3AppStorePluginPath, kSketch3PluginPath, kSketch3BetaPluginPath, kSketch2AppStorePluginPath, kSketch2PluginPath];
+    
+    [paths enumerateObjectsUsingBlock:^(NSString *path, NSUInteger idx, BOOL *stop) {
+        if ([fm fileExistsAtPath:[path stringByExpandingTildeInPath]]) {
+            NSString *outputPath = [NSString stringWithFormat:@"%@/%@", [path stringByExpandingTildeInPath], self.displayName];
+            [fm copyItemAtPath:tmpContentsPath toPath:outputPath error:nil];
+            NSLog(@"Copied to %@", outputPath);
+           // [downloadPaths addObject:outputPath];
+        }
+    }];
+
+}
+
 #pragma mark - Plugins Table
 
 -(void)reloadTableData {
@@ -87,6 +103,9 @@
     } else if (sender.selectedSegment == 1) {
         NSPredicate *installed = [NSPredicate predicateWithFormat:@"installed != nil"];
         activePlugins = [Plugin MR_findAllSortedBy:@"name" ascending:YES withPredicate:installed];
+    } else if (sender.selectedSegment == 2) {
+        NSPredicate *downloading = [NSPredicate predicateWithFormat:@"installed != nil"];
+        activePlugins = [Plugin MR_findAllSortedBy:@"name" ascending:YES withPredicate:downloading];
     }
     [self.tableView reloadData];
 }
@@ -161,5 +180,7 @@
         [[NSApplication sharedApplication] presentError:error];
     }
 }
+
+
 
 @end

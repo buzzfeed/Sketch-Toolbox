@@ -23,6 +23,7 @@ typedef NS_ENUM(UInt16, PluginState) {
 @property (nonatomic, retain) NSString * owner;
 @property (nonatomic, retain) NSString * desc;
 @property (nonatomic, retain) NSDate * installed;
+@property (nonatomic, retain) NSData * downloading;
 @property (nonatomic, retain) NSData * downloadPath;
 @property (nonatomic, retain) NSDate * lastModified;
 @property (nonatomic, retain) NSString * directoryName;
@@ -30,6 +31,7 @@ typedef NS_ENUM(UInt16, PluginState) {
 @property (nonatomic) UInt16 state;
 
 -(BOOL)isInstalled;
+-(BOOL)isDownloading;
 
 -(void)download;
 -(void)delete;

@@ -15,6 +15,7 @@
 @dynamic owner;
 @dynamic desc;
 @dynamic installed;
+@dynamic downloading;
 @dynamic stars;
 @dynamic downloadPath;
 @dynamic lastModified;
@@ -95,6 +96,10 @@
 -(NSURL*)repoURL {
     return [NSURL URLWithString:
             [NSString stringWithFormat:@"https://github.com/%@/%@", self.owner, self.name]];
+}
+
+-(BOOL)isDownloading{
+    return YES;
 }
 
 @end

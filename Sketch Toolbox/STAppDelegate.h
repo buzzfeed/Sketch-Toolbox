@@ -7,6 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "Constants.h"
 
 @interface STAppDelegate : NSObject <NSApplicationDelegate, NSTableViewDataSource, NSTableViewDelegate>
 
@@ -24,8 +25,10 @@
 -(IBAction)filterPlugins:(NSSearchField *)searchField;
 -(IBAction)segmentSelected:(NSSegmentedControl*)sender;
 -(IBAction)feedbackEmailClicked:(id)sender;
+-(IBAction)exportPlugin:(id)sender;
 
 - (NSString *)applicationFilesDirectory;
+-(void)reloadTableData;
 
 @property (nonatomic, strong) IBOutlet NSTableView *tableView;
 @property (nonatomic, strong) IBOutlet NSButton *refreshButton;
