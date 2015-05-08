@@ -35,7 +35,7 @@
     [pluginManager downloadCatalog];
 }
 
--(void)migrate {
+- (void)migrate {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *currentAppVersion = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
     NSString *previousVersion = [defaults objectForKey:@"appVersion"];
@@ -51,7 +51,7 @@
     [defaults synchronize];
 }
 
--(void)startApp {
+- (void)startApp {
     plugins = [Plugin MR_findAllSortedBy:@"name" ascending:YES];
     activePlugins = plugins;
     self.tableView.delegate = self;
@@ -60,7 +60,7 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadTableData) name:@"pluginStatusUpdated" object:nil];
 }
 
--(IBAction)feedbackEmailClicked:(id)sender {
+- (IBAction)feedbackEmailClicked:(id)sender {
     NSString *mailtoAddress = [[NSString stringWithFormat:@"mailto:sketch@shahr.uz?Subject=[Sketch Toolbox] Feedback on version %@",[[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]] stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
     [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:mailtoAddress]];
 }
@@ -71,10 +71,26 @@
     
     [paths enumerateObjectsUsingBlock:^(NSString *path, NSUInteger idx, BOOL *stop) {
         if ([fm fileExistsAtPath:[path stringByExpandingTildeInPath]]) {
-            NSString *outputPath = [NSString stringWithFormat:@"%@/%@", [path stringByExpandingTildeInPath], self.displayName];
-            [fm copyItemAtPath:tmpContentsPath toPath:outputPath error:nil];
-            NSLog(@"Copied to %@", outputPath);
+         //   NSString *outputPath = [NSString stringWithFormat:@"%@/%@", [path stringByExpandingTildeInPath], self.displayName];
+           // [fm copyItemAtPath:tmpContentsPath toPath:outputPath error:nil];
+           // NSLog(@"Copied to %@", outputPath);
            // [downloadPaths addObject:outputPath];
+        
+        }
+    }];
+
+}
+
+- (IBAction)importPlugin:(id)sender{
+    NSFileManager *fm =[NSFileManager defaultManager];
+    NSArray *paths = @[kSketch3AppStorePluginPath, kSketch3PluginPath, kSketch3BetaPluginPath, kSketch2AppStorePluginPath, kSketch2PluginPath];
+    
+    [paths enumerateObjectsUsingBlock:^(NSString *path, NSUInteger idx, BOOL *stop) {
+        if ([fm fileExistsAtPath:[path stringByExpandingTildeInPath]]) {
+            //   NSString *inputPath = [NSString stringWithFormat:@"%@/%@", [path stringByExpandingTildeInPath], self.displayName];
+            //  [fm copyItemAtPath:tmpContentsPath toPath:outputPath error:nil];
+            // NSLog(@"Copied to %@", outputPath);
+            // [downloadPaths addObject:outputPath];
         }
     }];
 
@@ -82,7 +98,7 @@
 
 #pragma mark - Plugins Table
 
--(void)reloadTableData {
+- (void)reloadTableData {
     if (self.searchField.stringValue.length) {
         [self filterPlugins:self.searchField];
         return;
@@ -93,24 +109,28 @@
     } else if (self.filterControl.selectedSegment == 1) {
         NSPredicate *installed = [NSPredicate predicateWithFormat:@"installed != nil"];
         activePlugins = [Plugin MR_findAllSortedBy:@"name" ascending:YES withPredicate:installed];
+    } else if (self.filterControl.selectedSegment == 2) {
+        NSPredicate *downloading = [NSPredicate predicateWithFormat:@"downloading != nil"];
+        activePlugins = [Plugin MR_findAllSortedBy:@"name" ascending:YES withPredicate:downloading];
     }
-    [self.tableView reloadData];
+    [self.tableView reloadData];    
 }
 
--(IBAction)segmentSelected:(NSSegmentedControl*)sender {
+- (IBAction)segmentSelected:(NSSegmentedControl*)sender {
     if (sender.selectedSegment == 0) {
         activePlugins = plugins;
     } else if (sender.selectedSegment == 1) {
         NSPredicate *installed = [NSPredicate predicateWithFormat:@"installed != nil"];
         activePlugins = [Plugin MR_findAllSortedBy:@"name" ascending:YES withPredicate:installed];
     } else if (sender.selectedSegment == 2) {
-        NSPredicate *downloading = [NSPredicate predicateWithFormat:@"installed != nil"];
+        NSPredicate *downloading = [NSPredicate predicateWithFormat:@"downloading != nil"];
         activePlugins = [Plugin MR_findAllSortedBy:@"name" ascending:YES withPredicate:downloading];
+        
     }
     [self.tableView reloadData];
 }
 
--(IBAction)filterPlugins:(NSSearchField *)searchField {
+- (IBAction)filterPlugins:(NSSearchField *)searchField {
 	NSMutableString *searchText = [NSMutableString stringWithString:[searchField stringValue]];
 	while ([searchText rangeOfString:@"  "].location != NSNotFound) {
 		[searchText replaceOccurrencesOfString:@"  " withString:@" " options:0 range:NSMakeRange(0, [searchText length])];
@@ -160,7 +180,7 @@
     return NO;
 }
 
--(IBAction)checkForUpdates:(id)sender {
+- (IBAction)checkForUpdates:(id)sender {
     [pluginManager downloadCatalog];
 }
 
@@ -180,6 +200,7 @@
         [[NSApplication sharedApplication] presentError:error];
     }
 }
+
 
 
 

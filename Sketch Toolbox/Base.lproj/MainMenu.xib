@@ -115,7 +115,7 @@
                                                         <button verticalHuggingPriority="750" id="9HP-Xd-tM3">
                                                             <rect key="frame" x="383" y="63" width="86" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
-                                                            <buttonCell key="cell" type="roundRect" title="View on Github" bezelStyle="roundedRect" image="3AF5ED79-0FCC-4136-883B-C100868EA100" imagePosition="overlaps" controlSize="small" state="on" inset="2" id="d2E-9a-pEH">
+                                                            <buttonCell key="cell" type="roundRect" title="View on Github" bezelStyle="roundedRect" image="97B265A6-5C64-4444-A159-D7CD9DA6EC15" imagePosition="overlaps" controlSize="small" state="on" inset="2" id="d2E-9a-pEH">
                                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                                 <font key="font" metaFont="smallSystem"/>
                                                             </buttonCell>
@@ -215,6 +215,7 @@
                                     <action selector="orderFrontStandardAboutPanel:" target="-1" id="jqq-mE-mF0"/>
                                 </connections>
                             </menuItem>
+                            <menuItem title="Preference" keyEquivalent="," id="OPt-0U-Sgl"/>
                             <menuItem title="Check for updates..." id="M66-4n-jO2">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
@@ -224,7 +225,7 @@
                             <menuItem title="Send feedback..." id="prn-vd-ce7">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
-                                    <action selector="feedbackEmailClicked" target="Voe-Tx-rLC" id="gZO-d5-XYc"/>
+                                    <action selector="feedbackEmailClicked:" target="Voe-Tx-rLC" id="ocH-as-gC7"/>
                                 </connections>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="5Vv-wl-45a"/>
@@ -263,9 +264,14 @@
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <menu key="submenu" title="File" id="hUe-Wt-QCJ">
                         <items>
+                            <menuItem title="Import" keyEquivalent="i" id="7EB-RI-IE7">
+                                <connections>
+                                    <action selector="importPlugin:" target="Voe-Tx-rLC" id="rBW-7C-yCr"/>
+                                </connections>
+                            </menuItem>
                             <menuItem title="Export" keyEquivalent="e" id="xTS-vU-tud">
                                 <connections>
-                                    <action selector="exportInstalledList:" target="Voe-Tx-rLC" id="2JV-Cg-tI4"/>
+                                    <action selector="exportPlugin:" target="Voe-Tx-rLC" id="FlO-xh-V5n"/>
                                 </connections>
                             </menuItem>
                             <menuItem title="Close" keyEquivalent="w" id="znK-O6-IYB">
@@ -333,7 +339,7 @@
         <userDefaultsController representsSharedInstance="YES" id="Isw-dd-hxY"/>
     </objects>
     <resources>
-        <image name="3AF5ED79-0FCC-4136-883B-C100868EA100" width="1" height="1">
+        <image name="97B265A6-5C64-4444-A159-D7CD9DA6EC15" width="1" height="1">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPj9YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQsLzI4O1UkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw

@@ -27,6 +27,7 @@
     if (self.isInstalled) return;
     NSLog(@"Downloading %@", self.name);
     self.state = PluginStateDownloading;
+    self.downloading = YES;
     
     NSURL *url = [NSURL URLWithString:
                   [NSString stringWithFormat:
@@ -59,6 +60,7 @@
         [fm removeItemAtPath:tmpContentsPath error:nil];
         
         NSLog(@"Finished downloading %@", self.name);
+        self.downloading = NO;
         self.downloadPath = [NSKeyedArchiver archivedDataWithRootObject:downloadPaths];
         self.installed = [NSDate date];
         self.state = PluginStateInstalled;
@@ -83,10 +85,19 @@
     [[NSNotificationCenter defaultCenter] postNotificationName:@"pluginStatusUpdated" object:nil];    
 }
 
+
 #pragma mark - Properties
 
 -(BOOL)isInstalled {
     return self.state == PluginStateInstalled || self.state == PluginStateDownloading;
+}
+
+-(BOOL)isDownloading{
+    if (PluginStateDownloading) {
+        return YES;
+    } else {
+        return NO;
+    };
 }
 
 -(NSString*)displayName {
@@ -98,8 +109,7 @@
             [NSString stringWithFormat:@"https://github.com/%@/%@", self.owner, self.name]];
 }
 
--(BOOL)isDownloading{
-    return YES;
-}
+
+
 
 @end
