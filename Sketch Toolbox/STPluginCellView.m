@@ -15,6 +15,10 @@
     if (!self.plugin.isInstalled) {
         [sender setTitle:@"Downloading..."];
         [self.plugin download];
+        self.downloadingPercentage.hidden = NO;
+        self.percentageLabel.hidden = NO;
+        self.percentageLabel.stringValue = [NSString stringWithFormat:@"%i",101010 ];
+        //self.downloadingPercentage = ;
     }
     else [self.plugin delete];
 }
@@ -34,11 +38,19 @@
     self.starCount.stringValue = [NSString stringWithFormat:@"%i", self.plugin.stars];
     if (self.plugin.state == PluginStateInstalled) {
         [self.actionButton setTitle:@"Uninstall"];
+        self.downloadingPercentage.hidden = YES;
+        self.percentageLabel.hidden = YES;
     } else if (self.plugin.state == PluginStateDownloading) {
         [self.actionButton setTitle:@"Downloading..."];
+        self.downloadingPercentage.hidden = NO;
+        self.percentageLabel.hidden = NO;
+        self.percentageLabel.stringValue = [NSString stringWithFormat:@"%i",101010 ];
     } else {
         [self.actionButton setTitle:@"Install"];
+        self.downloadingPercentage.hidden = YES;
+        self.percentageLabel.hidden = YES;
     }
+    //[STPluginCellView ];
 }
 
 - (void)openGitHubURL {
