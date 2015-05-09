@@ -96,9 +96,6 @@
 
 }
 
-- (IBAction)preferenceButtonClicked:(id)sender{
-}
-
 #pragma mark - Plugins Table
 
 - (void)reloadTableData {
@@ -122,7 +119,6 @@
 - (IBAction)segmentSelected:(NSSegmentedControl*)sender {
     if (sender.selectedSegment == 0) {
         activePlugins = plugins;
-        
     } else if (sender.selectedSegment == 1) {
         NSPredicate *installed = [NSPredicate predicateWithFormat:@"installed != nil"];
         activePlugins = [Plugin MR_findAllSortedBy:@"name" ascending:YES withPredicate:installed];
