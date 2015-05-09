@@ -18,6 +18,8 @@
 @property (nonatomic, strong) IBOutlet NSTextField *owner;
 @property (nonatomic, strong) IBOutlet NSTextField *starCount;
 @property (nonatomic, strong) IBOutlet NSButton *actionButton;
+@property (nonatomic, strong) IBOutlet NSProgressIndicator *downloadingPercentage;
+@property (nonatomic, strong) IBOutlet NSTextField *percentageLabel;
 
 -(IBAction)actionButtonPressed:(id)sender;
 -(IBAction)infoButtonPressed:(id)sender;
