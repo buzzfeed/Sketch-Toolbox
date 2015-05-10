@@ -17,7 +17,7 @@
         [self.plugin download];
         self.downloadingPercentage.hidden = NO;
         self.percentageLabel.hidden = NO;
-        self.percentageLabel.stringValue = [NSString stringWithFormat:@"%i",101010 ];
+        self.percentageLabel.stringValue = [NSString stringWithFormat:@"%lliMB/%lliMB %lld%%", [Plugin downloadedFileSize], [Plugin totalFileSize], ([Plugin downloadedFileSize]/[Plugin totalFileSize]) ];
         //self.downloadingPercentage = ;
     }
     else [self.plugin delete];
@@ -44,7 +44,7 @@
         [self.actionButton setTitle:@"Downloading..."];
         self.downloadingPercentage.hidden = NO;
         self.percentageLabel.hidden = NO;
-        self.percentageLabel.stringValue = [NSString stringWithFormat:@"%i",101010 ];
+        self.percentageLabel.stringValue = [NSString stringWithFormat:@"%lliMB/%lliMB %lld%%", [Plugin downloadedFileSize], [Plugin totalFileSize], ([Plugin downloadedFileSize]/[Plugin totalFileSize])  ];
     } else {
         [self.actionButton setTitle:@"Install"];
         self.downloadingPercentage.hidden = YES;

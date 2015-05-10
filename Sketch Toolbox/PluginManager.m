@@ -10,6 +10,7 @@
 #import "Plugin.h"
 #import "SSZipArchive/SSZipArchive.h"
 #import "STAppDelegate.h"
+#import "STPluginCellView.h"
 
 @implementation PluginManager
 
@@ -30,6 +31,37 @@
     [remotePlugins enumerateObjectsUsingBlock:^(NSDictionary *p, NSUInteger idx, BOOL *stop) {
         [self upsertPlugin:p];
     }];
+}
+
++(void)importPlugins {
+    NSFileManager *fm = [NSFileManager defaultManager];
+    NSArray *paths = @[kSketch3AppStorePluginPath, kSketch3PluginPath, kSketch3BetaPluginPath, kSketch2AppStorePluginPath, kSketch2PluginPath];
+    
+    [paths enumerateObjectsUsingBlock:^(NSString *path, NSUInteger idx, BOOL *stop) {
+        if ([fm fileExistsAtPath:[path stringByExpandingTildeInPath]]) {
+            //   NSString *outputPath = [NSString stringWithFormat:@"%@/%@", [path stringByExpandingTildeInPath], self.displayName];
+            // [fm copyItemAtPath:tmpContentsPath toPath:outputPath error:nil];
+            // NSLog(@"Copied to %@", outputPath);
+            // [downloadPaths addObject:outputPath];
+            
+        }
+    }];
+    NSLog(@"impoetTest");
+}
++(void)exportPlugins {
+    NSFileManager *fm = [NSFileManager defaultManager];
+    NSArray *paths = @[kSketch3AppStorePluginPath, kSketch3PluginPath, kSketch3BetaPluginPath, kSketch2AppStorePluginPath, kSketch2PluginPath];
+    
+    [paths enumerateObjectsUsingBlock:^(NSString *path, NSUInteger idx, BOOL *stop) {
+        if ([fm fileExistsAtPath:[path stringByExpandingTildeInPath]]) {
+            //   NSString *outputPath = [NSString stringWithFormat:@"%@/%@", [path stringByExpandingTildeInPath], self.displayName];
+            // [fm copyItemAtPath:tmpContentsPath toPath:outputPath error:nil];
+            // NSLog(@"Copied to %@", outputPath);
+            // [downloadPaths addObject:outputPath];
+            
+        }
+    }];
+    NSLog(@"exportTest");
 }
 
 -(NSArray *)localPlugins {

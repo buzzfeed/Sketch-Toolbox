@@ -65,35 +65,13 @@
     [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:mailtoAddress]];
 }
 
-- (IBAction)exportPlugin:(id)sender {
-    NSFileManager *fm = [NSFileManager defaultManager];
-    NSArray *paths = @[kSketch3AppStorePluginPath, kSketch3PluginPath, kSketch3BetaPluginPath, kSketch2AppStorePluginPath, kSketch2PluginPath];
-    
-    [paths enumerateObjectsUsingBlock:^(NSString *path, NSUInteger idx, BOOL *stop) {
-        if ([fm fileExistsAtPath:[path stringByExpandingTildeInPath]]) {
-         //   NSString *outputPath = [NSString stringWithFormat:@"%@/%@", [path stringByExpandingTildeInPath], self.displayName];
-           // [fm copyItemAtPath:tmpContentsPath toPath:outputPath error:nil];
-           // NSLog(@"Copied to %@", outputPath);
-           // [downloadPaths addObject:outputPath];
-        
-        }
-    }];
-
-}
 
 - (IBAction)importPlugin:(id)sender{
-    NSFileManager *fm =[NSFileManager defaultManager];
-    NSArray *paths = @[kSketch3AppStorePluginPath, kSketch3PluginPath, kSketch3BetaPluginPath, kSketch2AppStorePluginPath, kSketch2PluginPath];
-    
-    [paths enumerateObjectsUsingBlock:^(NSString *path, NSUInteger idx, BOOL *stop) {
-        if ([fm fileExistsAtPath:[path stringByExpandingTildeInPath]]) {
-            //   NSString *inputPath = [NSString stringWithFormat:@"%@/%@", [path stringByExpandingTildeInPath], self.displayName];
-            //  [fm copyItemAtPath:tmpContentsPath toPath:outputPath error:nil];
-            // NSLog(@"Copied to %@", outputPath);
-            // [downloadPaths addObject:outputPath];
-        }
-    }];
+    [PluginManager importPlugins];
+}
 
+- (IBAction)exportPlugin:(id)sender {
+    [PluginManager exportPlugins];
 }
 
 - (IBAction)preferenceButtonClicked:(id)sender{
@@ -132,6 +110,7 @@
         
     }
     [self.tableView reloadData];
+    
 }
 
 - (IBAction)filterPlugins:(NSSearchField *)searchField {

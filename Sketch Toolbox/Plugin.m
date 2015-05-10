@@ -21,6 +21,8 @@
 @dynamic lastModified;
 @dynamic directoryName;
 @dynamic state;
+@dynamic totalFileSize;
+@dynamic expectedContentLength;
 
 #pragma mark - Main Methods
 -(void)download {
@@ -32,10 +34,13 @@
     NSURL *url = [NSURL URLWithString:
                   [NSString stringWithFormat:
                    @"%@/archive/master.zip", self.repoURL]];
+    
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
         NSString *tmpPath = [@"/tmp/" stringByAppendingPathComponent:
                              [NSString stringWithFormat:@"%@-%@.zip", self.owner, self.name]];
+        self.totalFileSize = response.expectedContentLength;
+        NSLog(@"%lli",self.totalFileSize);
         NSString *tmpOutputPath = @"/tmp/";
         NSString *tmpContentsPath = [tmpOutputPath stringByAppendingPathComponent:
                                      [NSString stringWithFormat:@"%@-master", self.name]];
@@ -92,7 +97,7 @@
     return self.state == PluginStateInstalled || self.state == PluginStateDownloading;
 }
 
--(BOOL)isDownloading{
+-(BOOL)isDownloading {
     if (PluginStateDownloading) {
         return YES;
     } else {
@@ -109,7 +114,12 @@
             [NSString stringWithFormat:@"https://github.com/%@/%@", self.owner, self.name]];
 }
 
++(long long)totalFileSize {
+    return 100 ;
+}
 
-
++(long long)downloadedFileSize {
+    return 10;
+}
 
 @end

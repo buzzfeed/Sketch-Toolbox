@@ -13,6 +13,8 @@
 @interface PluginManager : NSObject <NSURLConnectionDelegate>
 
 +(id)sharedManager;
++(void)importPlugins;
++(void)exportPlugins;
 
 -(void)downloadCatalog;
 -(NSArray*)localPlugins;
