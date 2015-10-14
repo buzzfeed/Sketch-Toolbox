@@ -7,6 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import <WebKit/WebKit.h>
 @class Plugin;
 
 @interface STPluginCellView : NSTableCellView
@@ -14,6 +15,7 @@
 @property (nonatomic, strong) Plugin *plugin;
 
 @property (nonatomic, strong) IBOutlet NSButton *nameButton;
+@property (nonatomic, strong) IBOutlet NSTextField *nameField;
 @property (nonatomic, strong) IBOutlet NSTextField *descriptionField;
 @property (nonatomic, strong) IBOutlet NSTextField *owner;
 @property (nonatomic, strong) IBOutlet NSTextField *starCount;
