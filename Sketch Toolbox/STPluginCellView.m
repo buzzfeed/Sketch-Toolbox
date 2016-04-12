@@ -13,6 +13,7 @@
 
 -(IBAction)actionButtonPressed:(NSButton*)sender {
     if (!self.plugin.isInstalled) {
+        self.actionButton.enabled = NO;
         [sender setTitle:@"Downloading..."];
         [self.plugin download];
     }
@@ -33,10 +34,13 @@
     self.owner.stringValue = self.plugin.owner;
     self.starCount.stringValue = [NSString stringWithFormat:@"%i", self.plugin.stars];
     if (self.plugin.state == PluginStateInstalled) {
+        self.actionButton.enabled = YES;
         [self.actionButton setTitle:@"Uninstall"];
     } else if (self.plugin.state == PluginStateDownloading) {
+        self.actionButton.enabled = NO;
         [self.actionButton setTitle:@"Downloading..."];
     } else {
+        self.actionButton.enabled = YES;
         [self.actionButton setTitle:@"Install"];
     }
 }

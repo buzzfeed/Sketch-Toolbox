@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0E5D4F26192B15560084F30C /* STPluginCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E5D4F25192B15560084F30C /* STPluginCellView.m */; };
+		9FEE44C41BCEA38500F550FB /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FEE44C31BCEA38500F550FB /* WebKit.framework */; };
 		EA12D97F19354808000E5232 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = EA12D97E19354808000E5232 /* dsa_pub.pem */; };
 		EA5913BD192D627E00FF4CC0 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = EA5913BC192D627E00FF4CC0 /* Constants.m */; };
 		EA70F99C192AC88D00315D05 /* PluginManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EA70F99B192AC88D00315D05 /* PluginManager.m */; };
@@ -72,6 +73,7 @@
 /* Begin PBXFileReference section */
 		0E5D4F24192B15560084F30C /* STPluginCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STPluginCellView.h; sourceTree = "<group>"; };
 		0E5D4F25192B15560084F30C /* STPluginCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STPluginCellView.m; sourceTree = "<group>"; };
+		9FEE44C31BCEA38500F550FB /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		EA12D97E19354808000E5232 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 		EA5913BC192D627E00FF4CC0 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 		EA5913BE192D691200FF4CC0 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FEE44C41BCEA38500F550FB /* WebKit.framework in Frameworks */,
 				EA70F9B0192ACEBA00315D05 /* libz.dylib in Frameworks */,
 				EA86F5CE192AB55F00B834ED /* Cocoa.framework in Frameworks */,
 				EAA8CF53193534BE00F8AE07 /* Sparkle.framework in Frameworks */,
@@ -358,6 +361,7 @@
 		EA86F5CC192AB55F00B834ED /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9FEE44C31BCEA38500F550FB /* WebKit.framework */,
 				EAA8CF4E19350E0400F8AE07 /* Sparkle.framework */,
 				EA70F9AF192ACEBA00315D05 /* libz.dylib */,
 				EA86F5CD192AB55F00B834ED /* Cocoa.framework */,

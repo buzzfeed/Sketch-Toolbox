@@ -32,6 +32,13 @@
     [self startApp];
     pluginManager = [PluginManager sharedManager];
     [pluginManager downloadCatalog];
+    
+    plugins = [Plugin MR_findAllSortedBy:@"name" ascending:YES];
+    activePlugins = plugins;
+    [self.filterControl setSelectedSegment:0];
+    [self.tableView reloadData];
+    
+
 }
 
 -(void)migrate {
@@ -88,6 +95,19 @@
         NSPredicate *installed = [NSPredicate predicateWithFormat:@"installed != nil"];
         activePlugins = [Plugin MR_findAllSortedBy:@"name" ascending:YES withPredicate:installed];
     }
+    [self.tableView reloadData];
+}
+
+-(IBAction)selectSegmentAll:(id)sender {
+    [self.filterControl setSelectedSegment:0];
+    activePlugins = plugins;
+    [self.tableView reloadData];
+}
+
+-(IBAction)selectSegmentInstalled:(id)sender {
+    [self.filterControl setSelectedSegment:1];
+    NSPredicate *installed = [NSPredicate predicateWithFormat:@"installed != nil"];
+    activePlugins = [Plugin MR_findAllSortedBy:@"name" ascending:YES withPredicate:installed];
     [self.tableView reloadData];
 }
 
