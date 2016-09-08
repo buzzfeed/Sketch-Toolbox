@@ -1,0 +1,10 @@
+/* 
+  Localizable.strings
+  Sketch Toolbox
+
+  Created by pluwen on 16/6/28.
+  Copyright © 2016年 Shahruz Shaukat. All rights reserved.
+*/
+"Downloading..." = "下载中...";
+"Uninstall" = "卸载";
+"Install" = "安装";
