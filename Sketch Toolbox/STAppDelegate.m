@@ -27,6 +27,7 @@
 #pragma mark - Main app
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
+    [[self window] setTitleVisibility: NSWindowTitleHidden]; // sets unified title bar look
     [MagicalRecord setupAutoMigratingCoreDataStack];
     [self migrate];
     [self startApp];

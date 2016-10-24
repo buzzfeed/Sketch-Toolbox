@@ -23,7 +23,7 @@
         </customObject>
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
         <window title="Sketch Toolbox" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
-            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" texturedBackground="YES"/>
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="335" y="390" width="500" height="488"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1200"/>
@@ -32,17 +32,18 @@
                 <rect key="frame" x="0.0" y="0.0" width="500" height="488"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <scrollView autohidesScrollers="YES" horizontalLineScroll="109" horizontalPageScroll="10" verticalLineScroll="109" verticalPageScroll="10" usesPredominantAxisScrolling="NO" id="wZh-Yh-EYf">
-                        <rect key="frame" x="-1" y="-1" width="502" height="438"/>
+                    <scrollView misplaced="YES" autohidesScrollers="YES" horizontalLineScroll="109" horizontalPageScroll="10" verticalLineScroll="109" verticalPageScroll="10" usesPredominantAxisScrolling="NO" id="wZh-Yh-EYf">
+                        <rect key="frame" x="-1" y="-1" width="502" height="490"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <clipView key="contentView" id="0Qv-vq-Aez">
-                            <rect key="frame" x="1" y="1" width="500" height="436"/>
+                            <rect key="frame" x="1" y="1" width="500" height="488"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" alternatingRowBackgroundColors="YES" columnReordering="NO" columnResizing="NO" multipleSelection="NO" emptySelection="NO" autosaveColumns="NO" typeSelect="NO" rowHeight="107" rowSizeStyle="automatic" viewBased="YES" id="tll-qL-Al8">
+                                    <rect key="frame" x="0.0" y="0.0" width="500" height="488"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <size key="intercellSpacing" width="3" height="2"/>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                     <tableViewGridLines key="gridStyleMask" horizontal="YES"/>
                                     <color key="gridColor" red="0.92156862745098034" green="0.92156862745098034" blue="0.92156862745098034" alpha="1" colorSpace="calibratedRGB"/>
                                     <tableColumns>
@@ -114,7 +115,7 @@
                                                         <button verticalHuggingPriority="750" id="9HP-Xd-tM3">
                                                             <rect key="frame" x="383" y="63" width="86" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
-                                                            <buttonCell key="cell" type="roundRect" title="View on Github" bezelStyle="roundedRect" image="896AC610-C7BE-4D8C-BCA9-6CA1A6DB746F" imagePosition="overlaps" controlSize="small" state="on" inset="2" id="d2E-9a-pEH">
+                                                            <buttonCell key="cell" type="roundRect" title="View on Github" bezelStyle="roundedRect" image="8AD93D0B-7ADE-4202-91CE-974DD2E25BD5" imagePosition="overlaps" controlSize="small" state="on" inset="2" id="d2E-9a-pEH">
                                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                                 <font key="font" metaFont="smallSystem"/>
                                                             </buttonCell>
@@ -147,7 +148,6 @@
                                     </tableColumns>
                                 </tableView>
                             </subviews>
-                            <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </clipView>
                         <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="qUY-QL-Z1q">
                             <rect key="frame" x="1" y="119" width="223" height="15"/>
@@ -158,47 +158,74 @@
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                     </scrollView>
-                    <searchField wantsLayer="YES" verticalHuggingPriority="750" id="yLx-tt-8tM">
-                        <rect key="frame" x="302" y="455" width="189" height="22"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
-                        <searchFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" usesSingleLineMode="YES" bezelStyle="round" id="bgK-GS-Rpy">
-                            <font key="font" metaFont="system"/>
-                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                        </searchFieldCell>
-                        <connections>
-                            <action selector="filterPlugins:" target="Voe-Tx-rLC" id="8eO-cU-HYH"/>
-                        </connections>
-                    </searchField>
-                    <segmentedControl focusRingType="none" verticalHuggingPriority="750" id="D5M-im-bV3">
-                        <rect key="frame" x="41" y="453" width="132" height="25"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <segmentedCell key="cell" borderStyle="border" focusRingType="none" alignment="left" style="automatic" trackingMode="selectOne" id="slY-aY-0t8">
-                            <font key="font" metaFont="system"/>
-                            <segments>
-                                <segment label="All" width="52" selected="YES"/>
-                                <segment label="Installed" tag="1"/>
-                            </segments>
-                        </segmentedCell>
-                        <connections>
-                            <action selector="segmentSelected:" target="Voe-Tx-rLC" id="PW8-Qz-La1"/>
-                        </connections>
-                    </segmentedControl>
-                    <button verticalHuggingPriority="750" id="zDk-zV-Plv">
-                        <rect key="frame" x="8" y="453" width="25" height="25"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="Refresh" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyUpOrDown" inset="2" id="cRd-ay-rKP">
-                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="system"/>
-                            <string key="keyEquivalent">r</string>
-                            <modifierMask key="keyEquivalentModifierMask" command="YES"/>
-                        </buttonCell>
-                        <connections>
-                            <action selector="checkForUpdates:" target="Voe-Tx-rLC" id="quy-ED-cDE"/>
-                        </connections>
-                    </button>
                 </subviews>
             </view>
+            <toolbar key="toolbar" implicitIdentifier="63B2A258-EB5C-4ACB-9C01-389E632092F5" displayMode="iconOnly" sizeMode="regular" id="wQo-HT-1ic">
+                <allowedToolbarItems>
+                    <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="W9k-yS-pOe"/>
+                    <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="iUP-6D-CLQ"/>
+                    <toolbarItem implicitItemIdentifier="92717FED-B4CA-4C64-B03B-833F377BF5FD" label="View Toggle" paletteLabel="View Toggle" id="xw9-oo-xXy">
+                        <nil key="toolTip"/>
+                        <size key="minSize" width="114" height="25"/>
+                        <size key="maxSize" width="157" height="25"/>
+                        <segmentedControl key="view" focusRingType="none" verticalHuggingPriority="750" id="D5M-im-bV3">
+                            <rect key="frame" x="0.0" y="14" width="152" height="25"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <segmentedCell key="cell" borderStyle="border" focusRingType="none" alignment="left" style="automatic" trackingMode="selectOne" id="slY-aY-0t8">
+                                <font key="font" metaFont="system"/>
+                                <segments>
+                                    <segment label="Available" selected="YES"/>
+                                    <segment label="Installed" tag="1"/>
+                                </segments>
+                            </segmentedCell>
+                            <connections>
+                                <action selector="segmentSelected:" target="Voe-Tx-rLC" id="PW8-Qz-La1"/>
+                            </connections>
+                        </segmentedControl>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="05801F6B-6193-408B-9088-1C820E41DA14" label="Search" paletteLabel="Search" id="WVy-Ld-V96">
+                        <nil key="toolTip"/>
+                        <size key="minSize" width="189" height="22"/>
+                        <size key="maxSize" width="189" height="22"/>
+                        <searchField key="view" wantsLayer="YES" verticalHuggingPriority="750" id="yLx-tt-8tM">
+                            <rect key="frame" x="0.0" y="14" width="189" height="22"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                            <searchFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" usesSingleLineMode="YES" bezelStyle="round" id="bgK-GS-Rpy">
+                                <font key="font" metaFont="system"/>
+                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            </searchFieldCell>
+                            <connections>
+                                <action selector="filterPlugins:" target="Voe-Tx-rLC" id="8eO-cU-HYH"/>
+                            </connections>
+                        </searchField>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="65FFA0DD-740B-4309-8458-6682D63A2517" label="Refresh" paletteLabel="Refresh" image="NSRefreshFreestandingTemplate" id="cSr-6B-kmb">
+                        <nil key="toolTip"/>
+                        <size key="minSize" width="25" height="25"/>
+                        <size key="maxSize" width="25" height="25"/>
+                        <button key="view" verticalHuggingPriority="750" id="zDk-zV-Plv">
+                            <rect key="frame" x="12" y="14" width="25" height="25"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="NSRefreshFreestandingTemplate" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyUpOrDown" inset="2" id="cRd-ay-rKP">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" metaFont="system"/>
+                                <string key="keyEquivalent">r</string>
+                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                            </buttonCell>
+                            <connections>
+                                <action selector="checkForUpdates:" target="Voe-Tx-rLC" id="quy-ED-cDE"/>
+                            </connections>
+                        </button>
+                    </toolbarItem>
+                </allowedToolbarItems>
+                <defaultToolbarItems>
+                    <toolbarItem reference="cSr-6B-kmb"/>
+                    <toolbarItem reference="xw9-oo-xXy"/>
+                    <toolbarItem reference="iUP-6D-CLQ"/>
+                    <toolbarItem reference="WVy-Ld-V96"/>
+                </defaultToolbarItems>
+            </toolbar>
         </window>
         <customObject id="wxL-fS-6xB" customClass="SUUpdater"/>
         <menu title="Main Menu" systemMenu="main" id="EIy-nK-C1y">
@@ -326,10 +353,10 @@
         <userDefaultsController representsSharedInstance="YES" id="Isw-dd-hxY"/>
     </objects>
     <resources>
-        <image name="896AC610-C7BE-4D8C-BCA9-6CA1A6DB746F" width="1" height="1">
+        <image name="8AD93D0B-7ADE-4202-91CE-974DD2E25BD5" width="1" height="1">
             <mutableData key="keyedArchiveRepresentation">
-YnBsaXN0MDDUAQIDBAUGPj9YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
-GR4fIyQsLzI4O1UkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
+YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
+GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
 c1dOU0NvbG9ygAKADRIgwwAAgAOAC1Z7MSwgMX3SFQoWGFpOUy5vYmplY3RzoReABIAK0hUKGh2iGxyA
 BYAGgAkQANIgCiEiXxAUTlNUSUZGUmVwcmVzZW50YXRpb26AB4AITxEIdE1NACoAAAAKAAAADgEAAAMA
 AAABAAEAAAEBAAMAAAABAAEAAAECAAMAAAACAAgACAEDAAMAAAABAAEAAAEGAAMAAAABAAEAAAERAAQA
@@ -368,17 +395,16 @@ cwB6AGEAcgBvAVsAYwBpBB4EMQRJBDgEOQAgBEEENQRABEsEOQAgBD8EQAQ+BEQEOAQ7BEwGRQZEBkEA
 IAYqBjkGMQZKBkEAIABHAHIAYQB5ACAGJwZEBjkGJwZFAEcAZQBuAGUAcgBpAGMAIABHAHIAYQB5ACAA
 UAByAG8AZgBpAGwAZQAAdGV4dAAAAABDb3B5cmlnaHQgMjAwNyBBcHBsZSBJbmMuLCBhbGwgcmlnaHRz
 IHJlc2VydmVkLgBYWVogAAAAAAAA81EAAQAAAAEWzGN1cnYAAAAAAAAAAQHNAADSJSYnKFokY2xhc3Nu
-YW1lWCRjbGFzc2VzXxAQTlNCaXRtYXBJbWFnZVJlcKMpKitfEBBOU0JpdG1hcEltYWdlUmVwWk5TSW1h
-Z2VSZXBYTlNPYmplY3TSJSYtLldOU0FycmF5oi0r0iUmMDFeTlNNdXRhYmxlQXJyYXmjMC0r0zM0CjU2
-N1dOU1doaXRlXE5TQ29sb3JTcGFjZUQwIDAAEAOADNIlJjk6V05TQ29sb3KiOSvSJSY8PVdOU0ltYWdl
-ojwrXxAPTlNLZXllZEFyY2hpdmVy0UBBVHJvb3SAAQAIABEAGgAjAC0AMgA3AEYATABXAF4AZQByAHkA
-gQCDAIUAigCMAI4AlQCaAKUApwCpAKsAsACzALUAtwC5ALsAwADXANkA2wlTCVgJYwlsCX8JgwmWCaEJ
-qgmvCbcJugm/Cc4J0gnZCeEJ7gnzCfUJ9wn8CgQKBwoMChQKFwopCiwKMQAAAAAAAAIBAAAAAAAAAEIA
-AAAAAAAAAAAAAAAAAAozA
+YW1lWCRjbGFzc2VzXxAQTlNCaXRtYXBJbWFnZVJlcKMnKSpaTlNJbWFnZVJlcFhOU09iamVjdNIlJiwt
+V05TQXJyYXmiLCrSJSYvMF5OU011dGFibGVBcnJheaMvLCrTMjMKNDU2V05TV2hpdGVcTlNDb2xvclNw
+YWNlRDAgMAAQA4AM0iUmODlXTlNDb2xvcqI4KtIlJjs8V05TSW1hZ2WiOypfEA9OU0tleWVkQXJjaGl2
+ZXLRP0BUcm9vdIABAAgAEQAaACMALQAyADcARgBMAFcAXgBlAHIAeQCBAIMAhQCKAIwAjgCVAJoApQCn
+AKkAqwCwALMAtQC3ALkAuwDAANcA2QDbCVMJWAljCWwJfwmDCY4JlwmcCaQJpwmsCbsJvwnGCc4J2wng
+CeIJ5AnpCfEJ9An5CgEKBAoWChkKHgAAAAAAAAIBAAAAAAAAAEEAAAAAAAAAAAAAAAAAAAogA
 </mutableData>
         </image>
-        <image name="Refresh" width="15" height="14"/>
-        <image name="Star" width="32" height="30"/>
+        <image name="NSRefreshFreestandingTemplate" width="14" height="14"/>
+        <image name="Star" width="16" height="15"/>
         <image name="User" width="16" height="16"/>
     </resources>
 </document>
