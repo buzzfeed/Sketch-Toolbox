@@ -1,3 +1,11 @@
+# _DEPRECATED: This project is no longer maintained by BuzzFeed._
+
+The maintainers of this project no longer work at BuzzFeed and so we are no longer supporting this repository. Check out a more updated fork of the project [here](https://github.com/shahruz/Sketch-Toolbox).
+
+[![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
+
+---
+
 ![Header](https://i.cloudup.com/XTLlL1-Stt-3000x3000.png)
 
 A super simple plugin manager for Sketch.app.
