@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0E5D4F26192B15560084F30C /* STPluginCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E5D4F25192B15560084F30C /* STPluginCellView.m */; };
+		6F702A781D22271E00D62CB6 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6F702A7A1D22271E00D62CB6 /* Localizable.strings */; };
+		9FEE44C41BCEA38500F550FB /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FEE44C31BCEA38500F550FB /* WebKit.framework */; };
 		EA12D97F19354808000E5232 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = EA12D97E19354808000E5232 /* dsa_pub.pem */; };
 		EA5913BD192D627E00FF4CC0 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = EA5913BC192D627E00FF4CC0 /* Constants.m */; };
 		EA70F99C192AC88D00315D05 /* PluginManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EA70F99B192AC88D00315D05 /* PluginManager.m */; };
@@ -45,7 +47,6 @@
 		EA75D492192AC4C4005CF0DF /* MagicalRecord+ShorthandSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = EA75D473192AC4C4005CF0DF /* MagicalRecord+ShorthandSupport.m */; };
 		EA75D493192AC4C4005CF0DF /* MagicalRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = EA75D475192AC4C4005CF0DF /* MagicalRecord.m */; };
 		EA86F5CE192AB55F00B834ED /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA86F5CD192AB55F00B834ED /* Cocoa.framework */; };
-		EA86F5D8192AB55F00B834ED /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EA86F5D6192AB55F00B834ED /* InfoPlist.strings */; };
 		EA86F5DA192AB55F00B834ED /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EA86F5D9192AB55F00B834ED /* main.m */; };
 		EA86F5DE192AB55F00B834ED /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = EA86F5DC192AB55F00B834ED /* Credits.rtf */; };
 		EA86F5E1192AB55F00B834ED /* STAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EA86F5E0192AB55F00B834ED /* STAppDelegate.m */; };
@@ -72,6 +73,12 @@
 /* Begin PBXFileReference section */
 		0E5D4F24192B15560084F30C /* STPluginCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STPluginCellView.h; sourceTree = "<group>"; };
 		0E5D4F25192B15560084F30C /* STPluginCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STPluginCellView.m; sourceTree = "<group>"; };
+		6F702A731D2223BE00D62CB6 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/MainMenu.strings"; sourceTree = "<group>"; };
+		6F702A751D2223BE00D62CB6 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = "zh-Hans"; path = "zh-Hans.lproj/Credits.rtf"; sourceTree = "<group>"; };
+		6F702A791D22271E00D62CB6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		6F702A7B1D22272100D62CB6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		6F702A7C1D22272600D62CB6 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		9FEE44C31BCEA38500F550FB /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		EA12D97E19354808000E5232 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 		EA5913BC192D627E00FF4CC0 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 		EA5913BE192D691200FF4CC0 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
@@ -153,7 +160,6 @@
 		EA86F5D1192AB55F00B834ED /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		EA86F5D2192AB55F00B834ED /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		EA86F5D5192AB55F00B834ED /* Sketch Toolbox-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Sketch Toolbox-Info.plist"; sourceTree = "<group>"; };
-		EA86F5D7192AB55F00B834ED /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		EA86F5D9192AB55F00B834ED /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		EA86F5DB192AB55F00B834ED /* Sketch Toolbox-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Sketch Toolbox-Prefix.pch"; sourceTree = "<group>"; };
 		EA86F5DD192AB55F00B834ED /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
@@ -171,6 +177,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FEE44C41BCEA38500F550FB /* WebKit.framework in Frameworks */,
 				EA70F9B0192ACEBA00315D05 /* libz.dylib in Frameworks */,
 				EA86F5CE192AB55F00B834ED /* Cocoa.framework in Frameworks */,
 				EAA8CF53193534BE00F8AE07 /* Sparkle.framework in Frameworks */,
@@ -358,6 +365,7 @@
 		EA86F5CC192AB55F00B834ED /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9FEE44C31BCEA38500F550FB /* WebKit.framework */,
 				EAA8CF4E19350E0400F8AE07 /* Sparkle.framework */,
 				EA70F9AF192ACEBA00315D05 /* libz.dylib */,
 				EA86F5CD192AB55F00B834ED /* Cocoa.framework */,
@@ -399,11 +407,11 @@
 				EA75D43C192AC4C4005CF0DF /* MagicalRecord */,
 				EA70F99D192ACD5300315D05 /* SSZipArchive */,
 				EA86F5D5192AB55F00B834ED /* Sketch Toolbox-Info.plist */,
-				EA86F5D6192AB55F00B834ED /* InfoPlist.strings */,
 				EA86F5D9192AB55F00B834ED /* main.m */,
 				EA86F5DB192AB55F00B834ED /* Sketch Toolbox-Prefix.pch */,
 				EA86F5DC192AB55F00B834ED /* Credits.rtf */,
 				EA12D97E19354808000E5232 /* dsa_pub.pem */,
+				6F702A7A1D22271E00D62CB6 /* Localizable.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -451,6 +459,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = EA86F5C1192AB55F00B834ED;
 			productRefGroup = EA86F5CB192AB55F00B834ED /* Products */;
@@ -468,7 +477,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA12D97F19354808000E5232 /* dsa_pub.pem in Resources */,
-				EA86F5D8192AB55F00B834ED /* InfoPlist.strings in Resources */,
+				6F702A781D22271E00D62CB6 /* Localizable.strings in Resources */,
 				EA86F5E9192AB55F00B834ED /* Images.xcassets in Resources */,
 				EA86F5DE192AB55F00B834ED /* Credits.rtf in Resources */,
 				EA86F5E4192AB55F00B834ED /* MainMenu.xib in Resources */,
@@ -526,18 +535,21 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		EA86F5D6192AB55F00B834ED /* InfoPlist.strings */ = {
+		6F702A7A1D22271E00D62CB6 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				EA86F5D7192AB55F00B834ED /* en */,
+				6F702A791D22271E00D62CB6 /* Base */,
+				6F702A7B1D22272100D62CB6 /* en */,
+				6F702A7C1D22272600D62CB6 /* zh-Hans */,
 			);
-			name = InfoPlist.strings;
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 		EA86F5DC192AB55F00B834ED /* Credits.rtf */ = {
 			isa = PBXVariantGroup;
 			children = (
 				EA86F5DD192AB55F00B834ED /* en */,
+				6F702A751D2223BE00D62CB6 /* zh-Hans */,
 			);
 			name = Credits.rtf;
 			sourceTree = "<group>";
@@ -546,6 +558,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				EA86F5E3192AB55F00B834ED /* Base */,
+				6F702A731D2223BE00D62CB6 /* zh-Hans */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";

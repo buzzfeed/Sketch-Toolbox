@@ -1,0 +1,132 @@
+
+/* Class = "NSMenuItem"; title = "View"; ObjectID = "030-8D-IPi"; */
+"030-8D-IPi.title" = "视图";
+
+/* Class = "NSMenuItem"; title = "File"; ObjectID = "0RD-Co-gAH"; */
+"0RD-Co-gAH.title" = "文件";
+
+/* Class = "NSMenuItem"; title = "Minimize"; ObjectID = "0jb-vZ-hML"; */
+"0jb-vZ-hML.title" = "最小化";
+
+/* Class = "NSMenuItem"; title = "Paste"; ObjectID = "7E9-d5-3b8"; */
+"7E9-d5-3b8.title" = "粘贴";
+
+/* Class = "NSMenuItem"; title = "Window"; ObjectID = "7Jh-5l-eQQ"; */
+"7Jh-5l-eQQ.title" = "窗口";
+
+/* Class = "NSMenuItem"; title = "Copy"; ObjectID = "7Mq-11-Bz1"; */
+"7Mq-11-Bz1.title" = "复制";
+
+/* Class = "NSMenuItem"; title = "Show All"; ObjectID = "7Wy-nJ-PgQ"; */
+"7Wy-nJ-PgQ.title" = "显示全部";
+
+/* Class = "NSMenuItem"; title = "Sketch Toolbox"; ObjectID = "8TN-Gh-ty4"; */
+"8TN-Gh-ty4.title" = "Sketch Toolbox";
+
+/* Class = "NSMenu"; title = "Edit"; ObjectID = "Adc-BU-5CR"; */
+"Adc-BU-5CR.title" = "编辑";
+
+/* Class = "NSMenuItem"; title = "Cut"; ObjectID = "CPZ-3R-hxd"; */
+"CPZ-3R-hxd.title" = "剪切";
+
+/* Class = "NSButtonCell"; title = "Name"; ObjectID = "CZf-eR-jVZ"; */
+"CZf-eR-jVZ.title" = "名称";
+
+/* Class = "NSMenu"; title = "Main Menu"; ObjectID = "EIy-nK-C1y"; */
+"EIy-nK-C1y.title" = "主菜单";
+
+/* Class = "NSMenuItem"; title = "Bring All to Front"; ObjectID = "Eaj-lt-X1g"; */
+"Eaj-lt-X1g.title" = "前置全部窗口";
+
+/* Class = "NSMenuItem"; title = "Select All"; ObjectID = "FcB-MB-TgI"; */
+"FcB-MB-TgI.title" = "全选";
+
+/* Class = "NSMenuItem"; title = "Quit Sketch Toolbox"; ObjectID = "Gyu-YJ-ELY"; */
+"Gyu-YJ-ELY.title" = "退出 Sketch Toolbox";
+
+/* Class = "NSMenuItem"; title = "Hide Others"; ObjectID = "Im4-ZX-VnS"; */
+"Im4-ZX-VnS.title" = "隐藏其他";
+
+/* Class = "NSButtonCell"; title = "Install"; ObjectID = "JbC-ds-mUZ"; */
+"JbC-ds-mUZ.title" = "安装";
+
+/* Class = "NSSearchFieldCell"; placeholderString = "Search packages"; ObjectID = "Khj-Si-xx1"; */
+"Khj-Si-xx1.placeholderString" = "搜索插件库";
+
+/* Class = "NSMenuItem"; title = "Check for updates..."; ObjectID = "M66-4n-jO2"; */
+"M66-4n-jO2.title" = "检查更新...";
+
+/* Class = "NSMenuItem"; title = "About Sketch Toolbox"; ObjectID = "NPb-tc-EJ7"; */
+"NPb-tc-EJ7.title" = "关于 Sketch Toolbox";
+
+/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "Nfw-W0-1Rr"; */
+"Nfw-W0-1Rr.title" = "Text Cell";
+
+/* Class = "NSWindow"; title = "Sketch Toolbox"; ObjectID = "QvC-M9-y7g"; */
+"QvC-M9-y7g.title" = "Sketch Toolbox";
+
+/* Class = "NSMenu"; title = "Window"; ObjectID = "SP8-ze-rzd"; */
+"SP8-ze-rzd.title" = "窗口";
+
+/* Class = "NSMenuItem"; title = "Zoom"; ObjectID = "Z3i-7z-VW4"; */
+"Z3i-7z-VW4.title" = "缩放";
+
+/* Class = "NSMenuItem"; title = "Refresh packages"; ObjectID = "aNA-57-uKg"; */
+"aNA-57-uKg.title" = "刷新插件库";
+
+/* Class = "NSMenuItem"; title = "Switch to Installed"; ObjectID = "cbu-lh-c0H"; */
+"cbu-lh-c0H.title" = "切换到已安装";
+
+/* Class = "NSMenuItem"; title = "Services"; ObjectID = "cgq-f0-Nqv"; */
+"cgq-f0-Nqv.title" = "服务";
+
+/* Class = "NSTextFieldCell"; title = "Description of the plugin"; ObjectID = "cid-nH-aGY"; */
+"cid-nH-aGY.title" = "插件介绍";
+
+/* Class = "NSToolbarItem"; label = "Custom View"; ObjectID = "d18-Tg-nlQ"; */
+"d18-Tg-nlQ.label" = "自定义视图";
+
+/* Class = "NSToolbarItem"; paletteLabel = "Custom View"; ObjectID = "d18-Tg-nlQ"; */
+"d18-Tg-nlQ.paletteLabel" = "自定义视图";
+
+/* Class = "NSToolbarItem"; label = "Custom View"; ObjectID = "dSs-kG-bt7"; */
+"dSs-kG-bt7.label" = "自定义视图";
+
+/* Class = "NSToolbarItem"; paletteLabel = "Custom View"; ObjectID = "dSs-kG-bt7"; */
+"dSs-kG-bt7.paletteLabel" = "自定义视图";
+
+/* Class = "NSSegmentedCell"; dj9-lL-Jae.ibShadowedLabels[0] = "All"; ObjectID = "dj9-lL-Jae"; */
+"dj9-lL-Jae.ibShadowedLabels[0]" = "全部";
+
+/* Class = "NSSegmentedCell"; dj9-lL-Jae.ibShadowedLabels[1] = "Installed"; ObjectID = "dj9-lL-Jae"; */
+"dj9-lL-Jae.ibShadowedLabels[1]" = "已安装";
+
+/* Class = "NSMenu"; title = "File"; ObjectID = "hUe-Wt-QCJ"; */
+"hUe-Wt-QCJ.title" = "文件";
+
+/* Class = "NSMenu"; title = "Sketch Toolbox"; ObjectID = "ld3-2B-ncW"; */
+"ld3-2B-ncW.title" = "Sketch Toolbox";
+
+/* Class = "NSMenuItem"; title = "Hide Sketch Toolbox"; ObjectID = "ogc-57-hAs"; */
+"ogc-57-hAs.title" = "隐藏 Sketch Toolbox";
+
+/* Class = "NSMenu"; title = "Services"; ObjectID = "p50-bn-b9j"; */
+"p50-bn-b9j.title" = "服务";
+
+/* Class = "NSMenuItem"; title = "Send feedback..."; ObjectID = "prn-vd-ce7"; */
+"prn-vd-ce7.title" = "发送反馈...";
+
+/* Class = "NSMenu"; title = "View"; ObjectID = "qbH-D1-fT8"; */
+"qbH-D1-fT8.title" = "视图";
+
+/* Class = "NSTextFieldCell"; title = "Name"; ObjectID = "r2X-Kf-zhM"; */
+"r2X-Kf-zhM.title" = "名称";
+
+/* Class = "NSMenuItem"; title = "Switch to All"; ObjectID = "uPV-Ty-Xnq"; */
+"uPV-Ty-Xnq.title" = "切换到全部";
+
+/* Class = "NSMenuItem"; title = "Edit"; ObjectID = "y5d-Fj-8n6"; */
+"y5d-Fj-8n6.title" = "编辑";
+
+/* Class = "NSMenuItem"; title = "Close"; ObjectID = "znK-O6-IYB"; */
+"znK-O6-IYB.title" = "关闭";

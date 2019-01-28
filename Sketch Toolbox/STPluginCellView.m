@@ -13,7 +13,8 @@
 
 -(IBAction)actionButtonPressed:(NSButton*)sender {
     if (!self.plugin.isInstalled) {
-        [sender setTitle:@"Downloading..."];
+        self.actionButton.enabled = NO;
+        [sender setTitle:NSLocalizedString(@"Downloading...",nil)];
         [self.plugin download];
     }
     else [self.plugin delete];
@@ -33,11 +34,14 @@
     self.owner.stringValue = self.plugin.owner;
     self.starCount.stringValue = [NSString stringWithFormat:@"%i", self.plugin.stars];
     if (self.plugin.state == PluginStateInstalled) {
-        [self.actionButton setTitle:@"Uninstall"];
+        self.actionButton.enabled = YES;
+        [self.actionButton setTitle:NSLocalizedString(@"Uninstall",nil)];
     } else if (self.plugin.state == PluginStateDownloading) {
-        [self.actionButton setTitle:@"Downloading..."];
+        self.actionButton.enabled = NO;
+        [self.actionButton setTitle:NSLocalizedString(@"Downloading...",nil)];
     } else {
-        [self.actionButton setTitle:@"Install"];
+        self.actionButton.enabled = YES;
+        [self.actionButton setTitle:NSLocalizedString(@"Install",nil)];
     }
 }
 
