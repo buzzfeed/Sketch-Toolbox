@@ -15,25 +15,32 @@
 @dynamic owner;
 @dynamic desc;
 @dynamic installed;
+@dynamic downloading;
 @dynamic stars;
 @dynamic downloadPath;
 @dynamic lastModified;
 @dynamic directoryName;
 @dynamic state;
+@dynamic totalFileSize;
+@dynamic expectedContentLength;
 
 #pragma mark - Main Methods
 -(void)download {
     if (self.isInstalled) return;
     NSLog(@"Downloading %@", self.name);
     self.state = PluginStateDownloading;
+    self.downloading = YES;
     
     NSURL *url = [NSURL URLWithString:
                   [NSString stringWithFormat:
                    @"%@/archive/master.zip", self.repoURL]];
+    
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
         NSString *tmpPath = [@"/tmp/" stringByAppendingPathComponent:
                              [NSString stringWithFormat:@"%@-%@.zip", self.owner, self.name]];
+        self.totalFileSize = response.expectedContentLength;
+        NSLog(@"%lli",self.totalFileSize);
         NSString *tmpOutputPath = @"/tmp/";
         NSString *tmpContentsPath = [tmpOutputPath stringByAppendingPathComponent:
                                      [NSString stringWithFormat:@"%@-master", self.name]];
@@ -58,6 +65,7 @@
         [fm removeItemAtPath:tmpContentsPath error:nil];
         
         NSLog(@"Finished downloading %@", self.name);
+        self.downloading = NO;
         self.downloadPath = [NSKeyedArchiver archivedDataWithRootObject:downloadPaths];
         self.installed = [NSDate date];
         self.state = PluginStateInstalled;
@@ -82,10 +90,19 @@
     [[NSNotificationCenter defaultCenter] postNotificationName:@"pluginStatusUpdated" object:nil];    
 }
 
+
 #pragma mark - Properties
 
 -(BOOL)isInstalled {
     return self.state == PluginStateInstalled || self.state == PluginStateDownloading;
+}
+
+-(BOOL)isDownloading {
+    if (PluginStateDownloading) {
+        return YES;
+    } else {
+        return NO;
+    };
 }
 
 -(NSString*)displayName {
@@ -95,6 +112,14 @@
 -(NSURL*)repoURL {
     return [NSURL URLWithString:
             [NSString stringWithFormat:@"https://github.com/%@/%@", self.owner, self.name]];
+}
+
++(long long)totalFileSize {
+    return 100 ;
+}
+
++(long long)downloadedFileSize {
+    return 10;
 }
 
 @end

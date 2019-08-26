@@ -23,13 +23,17 @@ typedef NS_ENUM(UInt16, PluginState) {
 @property (nonatomic, retain) NSString * owner;
 @property (nonatomic, retain) NSString * desc;
 @property (nonatomic, retain) NSDate * installed;
+@property () BOOL * downloading;
 @property (nonatomic, retain) NSData * downloadPath;
 @property (nonatomic, retain) NSDate * lastModified;
 @property (nonatomic, retain) NSString * directoryName;
 @property (nonatomic) UInt32 stars;
 @property (nonatomic) UInt16 state;
+@property (readonly) long long expectedContentLength;
+@property () long long totalFileSize;
 
 -(BOOL)isInstalled;
+-(BOOL)isDownloading;
 
 -(void)download;
 -(void)delete;
@@ -37,5 +41,7 @@ typedef NS_ENUM(UInt16, PluginState) {
 -(NSString*)displayName;
 -(NSURL*)repoURL;
 
++(long long)totalFileSize;
++(long long)downloadedFileSize;
 
 @end
