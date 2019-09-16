@@ -87,7 +87,7 @@
             plugin.stars = [dataDict[@"stargazers_count"] intValue];
             
             NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-            [formatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss.SSSZ"];
+            [formatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss'Z'"];
             NSLocale *posix = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"];
             [formatter setLocale:posix];
             NSDate *pushed_date = [formatter dateFromString:dataDict[@"pushed_at"]];
